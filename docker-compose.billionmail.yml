@@ -1,0 +1,145 @@
+name: billionmail
+
+services:
+    pgsql-billionmail:
+      image: postgres:17.4-alpine
+      hostname: pgsql
+      volumes:
+        - ./postgresql-data:/var/lib/postgresql/data
+        - ./postgresql-socket:/var/run/postgresql
+      environment:
+        - TZ=${TZ}
+        - POSTGRES_DB=${DBNAME}
+        - POSTGRES_USER=${DBUSER}
+        - POSTGRES_PASSWORD=${DBPASS}
+      restart: always
+      ports:
+        - "${SQL_PORT:-127.0.0.1:25432}:5432"
+      networks:
+        billionmail-network:
+          aliases:
+            - pgsql
+
+    redis-billionmail:
+      image: redis:7.4.2-alpine
+      hostname: redis
+      entrypoint: ["/bin/sh","/redis-conf.sh"]
+      volumes:
+        - ./redis-data:/data
+        - ./conf/redis/redis-conf.sh:/redis-conf.sh
+      restart: always
+      ports:
+        - "${REDIS_PORT:-127.0.0.1:26379}:6379"
+      environment:
+        - TZ=${TZ}
+        - REDISPASS=${REDISPASS}
+      sysctls:
+        - net.core.somaxconn=4096
+      networks:
+        billionmail-network:
+          aliases:
+            - redis
+
+    rspamd-billionmail:
+      image: billionmail/rspamd:1.2
+      hostname: rspamd
+      depends_on:
+        - redis-billionmail
+      environment:
+        - TZ=${TZ}
+        - REDISPASS=${REDISPASS}
+        - RETENTION_DAYS=${RETENTION_DAYS:-7}
+      volumes:
+        - ./conf/rspamd/local.d:/etc/rspamd/local.d
+        - ./conf/rspamd/statistic.conf:/etc/rspamd/statistic.conf
+        - ./conf/rspamd/rspamd.conf:/etc/rspamd/rspamd.conf
+        - ./rspamd-data:/var/lib/rspamd
+        - ./logs/rspamd:/var/log/rspamd
+      restart: always
+      networks:
+        billionmail-network:
+          aliases:
+            - rspamd
+
+    postfix-billionmail:
+      image: billionmail/postfix:1.6
+      hostname: postfix
+      depends_on:
+        pgsql-billionmail:
+          condition: service_started
+      volumes:
+        - ./conf/postfix/main.cf:/etc/postfix/main.cf
+        - ./conf/postfix/master.cf:/etc/postfix/master.cf
+        - ./conf/postfix/conf:/etc/postfix/conf
+        - ./conf/postfix/sql:/etc/postfix/sql
+        - ./conf/postfix/rsyslog.conf:/etc/rsyslog.conf
+        - ./logs/postfix:/var/log/mail
+        - ./ssl:/etc/ssl/mail
+        - ./postfix-data:/var/spool/postfix
+        - ./rspamd-data:/var/lib/rspamd
+        - ./postgresql-socket:/var/run/postgresql
+      environment:
+        - TZ=${TZ}
+        - DBNAME=${DBNAME}
+        - DBUSER=${DBUSER}
+        - DBPASS=${DBPASS}
+        - REDISPASS=${REDISPASS}
+        - BILLIONMAIL_HOSTNAME=${BILLIONMAIL_HOSTNAME}
+        - RETENTION_DAYS=${RETENTION_DAYS:-7}
+      cap_add:
+        - NET_BIND_SERVICE
+      ports:
+        # Só a 25 é publicada (entrega de saída + bounces de entrada).
+        # 465/587 exigiriam dovecot (submission autenticada) — fora deste perfil.
+        - "${SMTP_PORT:-25}:25"
+      restart: always
+      networks:
+        billionmail-network:
+          aliases:
+            - postfix
+
+    core-billionmail:
+      image: billionmail/core:4.9.3
+      hostname: core-manage
+      depends_on:
+        - pgsql-billionmail
+      volumes:
+        - ./ssl:/etc/ssl/mail
+        - ./ssl-self-signed:/etc/ssl/ssl-self-signed
+        - ./conf/core/fail2ban/filter.d:/etc/fail2ban/filter.d
+        - ./conf/core/fail2ban/jail.d:/etc/fail2ban/jail.d
+        - ./logs/fail2ban:/var/log/fail2ban
+        - ./postgresql-socket:/opt/billionmail/postgresql-socket
+        - ./rspamd-data:/opt/billionmail/rspamd-data
+        - ./.env:/opt/billionmail/.env
+        - ./conf:/opt/billionmail/conf
+        - ./logs:/opt/billionmail/logs
+        - ./logs/core:/opt/billionmail/core/logs
+        - ./core-data:/opt/billionmail/core/data
+        - /var/run/docker.sock:/var/run/docker.sock:ro
+      environment:
+        - TZ=${TZ}
+        - FAIL2BAN_INIT=${FAIL2BAN_INIT:-y}
+      cap_add:
+        - NET_BIND_SERVICE
+        - NET_ADMIN
+        - NET_RAW
+      ports:
+        - "${HTTP_PORT:-8080}:${HTTP_PORT:-8080}"
+        - "${HTTPS_PORT:-8443}:${HTTPS_PORT:-8443}"
+      restart: always
+      networks:
+        billionmail-network:
+          aliases:
+            - core
+
+
+networks:
+  billionmail-network:
+    driver: bridge
+    driver_opts:
+      com.docker.network.bridge.name: br-billionmail
+    ipam:
+      driver: default
+      config:
+        - subnet: ${IPV4_NETWORK:-172.66.1}.0/24
