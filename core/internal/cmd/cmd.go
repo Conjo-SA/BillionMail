@@ -306,7 +306,15 @@ var (
 				IdleConnTimeout:     5 * time.Second,
 			}
 			s.BindHandler("/.well-known/acme-challenge/*any", func(r *ghttp.Request) {
-				ACMEChallengeProxy.ServeHTTP(r.Response.BufferWriter, r.Request)
+				// Forçar o Header Host para o destino local para o Lego aceitar a conexão
+				r.Request.Host = "127.0.0.1:60880"
+				r.Request.URL.Host = "127.0.0.1:60880"
+
+				// Usar o RawWriter() bruto em vez do BufferWriter interno do GoFrame
+				ACMEChallengeProxy.ServeHTTP(r.Response.RawWriter(), r.Request)
+
+				// Encerrar o ciclo de vida do middleware/route do GoFrame imediatamente
+				r.ExitAll()
 			})
 
 			// Proxy Rspamd GUI
