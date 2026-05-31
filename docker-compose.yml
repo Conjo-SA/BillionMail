@@ -145,7 +145,7 @@ services:
       build:
         context: ./Dockerfiles/webmail
         dockerfile: Dockerfile
-      image: billionmail/webmail:local
+      pull_policy: build
       hostname: roundcube
       depends_on:
         - pgsql-billionmail
