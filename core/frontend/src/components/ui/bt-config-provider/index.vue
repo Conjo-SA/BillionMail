@@ -52,12 +52,12 @@ const themeRef = computed(() => {
 })
 
 const locale = computed(() => {
-	const langObj = langMap[lang.value as keyof typeof langMap]
+	const langObj = langMap[lang.value as keyof typeof langMap] ?? langMap['en']
 	return langObj.locale
 })
 
 const dateLocale = computed(() => {
-	const langObj = langMap[lang.value as keyof typeof langMap]
+	const langObj = langMap[lang.value as keyof typeof langMap] ?? langMap['en']
 	return langObj.dateLocale
 })
 

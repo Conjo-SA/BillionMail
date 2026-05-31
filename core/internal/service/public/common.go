@@ -794,7 +794,7 @@ func GetLanguageFromCtx(ctx context.Context) string {
 	if r != nil {
 		// 1. URL
 		if lang := r.Get("lang").String(); lang != "" {
-			cleanLang := strings.ToLower(strings.Split(lang, "-")[0])
+			cleanLang := normalizeLang(lang)
 			_ = r.Session.Set("language", cleanLang)
 			return cleanLang
 		}
@@ -820,8 +820,7 @@ func GetLanguageFromCtx(ctx context.Context) string {
 		acceptLang := r.Header.Get("Accept-Language")
 		if acceptLang != "" {
 
-			browserLang := strings.ToLower(strings.Split(acceptLang, ",")[0])
-			browserLang = strings.Split(browserLang, "-")[0]
+			browserLang := normalizeLang(strings.Split(acceptLang, ",")[0])
 
 			// check if the language is supported
 			languages := GetLanguageList()
@@ -844,6 +843,24 @@ func GetLanguageFromCtx(ctx context.Context) string {
 	}
 
 	return "en"
+}
+
+// normalizeLang converts a locale string to the canonical form used internally.
+// e.g. "pt-BR", "pt_BR", "pt" → "pt-br"; "en-US" → "en"; "zh-CN" → "zh"
+func normalizeLang(lang string) string {
+	lang = strings.ToLower(strings.TrimSpace(lang))
+	lang = strings.ReplaceAll(lang, "_", "-")
+	// strip quality factor (e.g. "en-us;q=0.9" → "en-us")
+	lang = strings.Split(lang, ";")[0]
+	// known multi-part codes that must be preserved
+	known := []string{"pt-br", "zh-tw", "zh-hk"}
+	for _, k := range known {
+		if strings.HasPrefix(lang, k) {
+			return k
+		}
+	}
+	// for everything else use only the primary subtag
+	return strings.Split(lang, "-")[0]
 }
 
 func getDefaultLanguageFromDB(defaultValue string) string {
