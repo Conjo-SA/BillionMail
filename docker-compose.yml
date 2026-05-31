@@ -197,6 +197,7 @@ services:
         - ./logs:/opt/billionmail/logs
         - ./logs/core:/opt/billionmail/core/logs
         - ./core-data:/opt/billionmail/core/data
+        - ./core/languages/settings.json:/opt/billionmail/core/languages/settings.json
         - /var/run/docker.sock:/var/run/docker.sock:ro
         - ./vmail-data:/opt/billionmail/vmail-data
       environment:
