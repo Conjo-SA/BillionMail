@@ -12,7 +12,7 @@
 
 <script lang="ts" setup>
 import { storeToRefs } from 'pinia'
-import { enUS, zhCN, jaJP, deDE, dateEnUS, dateZhCN, dateJaJP, dateDeDE, darkTheme } from 'naive-ui'
+import { enUS, zhCN, jaJP, deDE, ptBR, dateEnUS, dateZhCN, dateJaJP, dateDeDE, datePtBR, darkTheme } from 'naive-ui'
 import { useGlobalStore, useThemeStore } from '@/store'
 
 const globalStore = useGlobalStore()
@@ -37,6 +37,10 @@ const langMap = {
 	de: {
 		locale: deDE,
 		dateLocale: dateDeDE,
+	},
+	'pt-br': {
+		locale: ptBR,
+		dateLocale: datePtBR,
 	},
 }
 

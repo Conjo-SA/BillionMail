@@ -29,6 +29,12 @@
       "google": "tr",
       "title": "Turkish",
       "cn": "Turkish"
+    },
+    {
+      "name": "pt-br",
+      "google": "pt",
+      "title": "Português (BR)",
+      "cn": "Português (BR)"
     }
   ]
 }

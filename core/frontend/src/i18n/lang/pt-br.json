@@ -1,0 +1,1659 @@
+{
+	"common": {
+		"all": {
+			"text": "Todos",
+			"domain": "Todos os Domínios"
+		},
+		"time": {
+			"today": "Hoje",
+			"yesterday": "Ontem",
+			"last7days": "Últimos 7 Dias",
+			"custom": "Personalizado"
+		},
+		"unit": {
+			"days": "Dias",
+			"hours": "Horas",
+			"minutes": "Minutos",
+			"seconds": "Segundos"
+		},
+		"columns": {
+			"actions": "Ações"
+		},
+		"actions": {
+			"view": "Visualizar",
+			"edit": "Editar",
+			"delete": "Excluir",
+			"add": "Adicionar",
+			"create": "Criar",
+			"update": "Atualizar",
+			"save": "Salvar",
+			"cancel": "Cancelar",
+			"confirm": "Confirmar",
+			"back": "Voltar",
+			"search": "Buscar",
+			"reset": "Redefinir",
+			"more": "Mais",
+			"refresh": "Atualizar",
+			"copy": "Copiar",
+			"restart": "Reiniciar",
+			"import": "Importar",
+			"export": "Exportar",
+			"download": "Baixar",
+			"upload": "Enviar",
+			"apply": "Aplicar",
+			"test": "Testar",
+			"rename": "Renomear",
+			"preview": "Pré-visualizar",
+			"modify": "Modificar",
+			"config": "Configurar",
+			"help": "Ajuda",
+			"settings": "Configurações",
+			"clear": "Limpar"
+		},
+		"useCopy": {
+			"noText": "Nenhum texto para copiar",
+			"success": "Copiado com sucesso",
+			"failed": "Falha ao copiar"
+		}
+	},
+	"components": {
+		"tableHelp": {
+			"text1": "Envie um {issues} para dúvidas ou sugestões e acenda uma {star} no Github para apoiar o projeto.",
+			"text2": "Valorizamos muito sua participação ativa. Obrigado."
+		},
+		"upload": {
+			"error": {
+				"fileSizeExceeded": "O tamanho do arquivo [{fileName}] não pode exceder {maxSize}MB",
+				"uploadFailed": "Falha ao enviar o arquivo. Por favor, tente novamente"
+			},
+			"prompt": {
+				"dragText": "Clique ou arraste arquivos para esta área",
+				"supportedFiles": "Somente arquivos {suffix} são suportados"
+			}
+		}
+	},
+	"layout": {
+		"header": {
+			"submit": "Enviar uma Solicitação"
+		},
+		"instances": {
+			"title": "Instâncias",
+			"manage": "Gerenciar Instâncias",
+			"add": "Adicionar Instância",
+			"name": "Nome",
+			"namePlaceholder": "ex.: Produção",
+			"url": "URL",
+			"urlPlaceholder": "ex.: https://mail.acme.com",
+			"current": "Atual",
+			"noInstances": "Nenhuma instância salva",
+			"deleteConfirm": "Remover \"{name}\"?",
+			"invalidUrl": "URL inválida"
+		},
+		"menu": {
+			"overview": "Visão Geral",
+			"market": "Email Marketing",
+			"task": "Tarefa",
+			"template": "Template",
+			"sendApi": "API de Envio",
+			"contacts": "Contatos",
+			"subscribers": "Assinantes",
+			"group": "Grupo",
+			"domain": "Domínio",
+			"mailboxes": "Caixas de Correio",
+			"settings": "Configurações",
+			"common": "Configurações Gerais",
+			"bcc": "Cópia Oculta (BCC)",
+			"forward": "Encaminhar E-mail",
+			"logout": "Sair",
+			"service": "Serviço",
+			"logs": "Registros",
+			"operation_logs": "Registros de Operação",
+			"error_logs": "Registros de Erro",
+			"sequences": "Sequências",
+			"leads": "Leads",
+			"enrichment": "Enriquecimento",
+			"videoOutreach": "Vídeo Outreach"
+		}
+	},
+	"login": {
+		"title": "BillionMail",
+		"form": {
+			"usernamePlaceholder": "Usuário",
+			"passwordPlaceholder": "Senha",
+			"loginButton": "Entrar",
+			"captchaPlaceholder": "Código de verificação",
+			"changeCaptcha": "Clique para alterar",
+			"captcha": "Código de verificação"
+		},
+		"validation": {
+			"usernameRequired": "O usuário não pode estar vazio!",
+			"passwordRequired": "A senha não pode estar vazia!",
+			"captchaRequired": "Por favor, insira o código de verificação"
+		},
+		"messages": {
+			"loginSuccess": "Login realizado com sucesso",
+			"loginFailed": "Falha no login",
+			"networkError": "Erro de rede, tente novamente mais tarde"
+		}
+	},
+	"user": {
+		"logout": {
+			"title": "Aviso",
+			"content": "Tem certeza de que deseja sair?"
+		},
+		"api": {
+			"loading": {
+				"logout": "Saindo, aguarde..."
+			}
+		}
+	},
+	"overview": {
+		"delivered": "Entregues",
+		"opened": "Abertos",
+		"clicked": "Clicados",
+		"bounced": "Devolvidos",
+		"delayedQueue": "Fila com Atraso",
+		"mailProviders": "Provedores de E-mail",
+		"sendStats": "Estatísticas de Envio",
+		"provider": {
+			"mailProvider": "Provedor de E-mail",
+			"delivered": "Entregues",
+			"open": "Abertura",
+			"click": "Clique",
+			"bounce": "Devolução"
+		},
+		"send": {
+			"successRate": "Taxa de Sucesso",
+			"success": "Sucesso",
+			"fail": "Falhou",
+			"sendSuccess": "Envio com Sucesso",
+			"sendFail": "Falha no Envio"
+		},
+		"rate": {
+			"openRate": "Taxa de Abertura",
+			"clickRate": "Taxa de Clique",
+			"bounceRate": "Taxa de Devolução"
+		},
+		"sendFailDetails": {
+			"title": "Detalhes de Falha no Envio",
+			"columns": {
+				"recipient": "Destinatário",
+				"dsn": "DSN",
+				"delay": "Atraso",
+				"delays": "Atrasos",
+				"status": "Status",
+				"relay": "Relay",
+				"details": "Detalhes"
+			}
+		},
+		"sendQueue": {
+			"title": "Fila de Envio",
+			"breadcrumb": "Fila de Envio",
+			"buttons": {
+				"refresh": "Atualizar Fila",
+				"quickClear": "Limpeza Rápida",
+				"paramConfig": "Configuração de Parâmetros da Fila",
+				"resend": "Reenviar",
+				"batchDelete": "Exclusão em Lote",
+				"batchResend": "Reenviar"
+			},
+			"table": {
+				"columns": {
+					"sender": "Remetente",
+					"recipient": "Destinatário",
+					"arrivalTime": "Hora de Chegada",
+					"messageSize": "Tamanho da Mensagem",
+					"delayReason": "Motivo do Atraso",
+					"action": "Ação"
+				}
+			},
+			"confirm": {
+				"quickClear": {
+					"title": "Limpeza Rápida",
+					"content": "Tem certeza de que deseja limpar rapidamente a fila?"
+				},
+				"resend": {
+					"title": "Reenviar",
+					"content": "Tem certeza de que deseja reenviar a fila?"
+				},
+				"delete": {
+					"title": "Excluir Fila",
+					"content": "Tem certeza de que deseja excluir esta fila?"
+				},
+				"batchDelete": {
+					"title": "Exclusão em Lote",
+					"content": "Tem certeza de que deseja excluir {count} filas de envio?"
+				},
+				"batchResend": {
+					"title": "Reenvio em Lote",
+					"content": "Tem certeza de que deseja reenviar {count} filas de envio?"
+				}
+			},
+			"paramConfig": {
+				"title": "Configuração de Parâmetros da Fila",
+				"fields": {
+					"bounceQueueLifetime": "Tempo de Vida da Fila de Devoluções",
+					"maximalQueueLifetime": "Tempo de Vida Máximo da Fila",
+					"minimalBackoffTime": "Tempo de Espera Mínimo",
+					"maximalBackoffTime": "Tempo de Espera Máximo",
+					"queueRunDelay": "Atraso de Execução da Fila",
+					"triggerTimeout": "Tempo Limite de Disparo"
+				}
+			},
+			"queueLogs": {
+				"title": "Registros da Fila"
+			}
+		},
+		"api": {
+			"loading": {
+				"resendQueue": "Reenviando fila, aguarde...",
+				"deleteQueue": "Excluindo fila, aguarde...",
+				"setQueueConfig": "Configurando parâmetros da fila, aguarde...",
+				"clearQueue": "Limpando fila, aguarde..."
+			}
+		}
+	},
+	"market": {
+		"task": {
+			"title": "Tarefa",
+			"actions": {
+				"add": "Adicionar Tarefa",
+				"detail": "Visualizar",
+				"export": "Exportar",
+				"send": "Enviar",
+				"pause": "Pausar",
+				"analytics": "Análises"
+			},
+			"columns": {
+				"time": "Hora",
+				"subject": "Assunto",
+				"sender": "Remetente",
+				"recipients": "Para",
+				"success": "Sucesso",
+				"failed": "Falhou",
+				"status": "Status",
+				"remark": "Observação",
+				"estimatedTime": "Tempo Estimado de Conclusão",
+				"progress": "Progresso",
+				"email": "E-mail",
+				"errorMsg": "Mensagem de Erro"
+			},
+			"status": {
+				"pending": "Pendente",
+				"processing": "Em Processamento",
+				"done": "Concluído",
+				"noIpWarmup": "Sem Aquecimento de IP"
+			},
+			"search": {
+				"subjectPlaceholder": "Buscar por assunto"
+			},
+			"changeStatus": {
+				"title": "Alterar Status da Tarefa [{subject}]",
+				"startConfirm": "Iniciar o envio da tarefa agora?",
+				"pauseConfirm": "Após pausar a tarefa, você pode continuar o envio!"
+			},
+			"delete": {
+				"title": "Excluir Tarefa",
+				"confirm": "Tem certeza de que deseja excluir a tarefa \"{subject}\"?"
+			},
+			"detail": {
+				"title": "Detalhes da Tarefa",
+				"displayName": "Nome de Exibição",
+				"sender": "Remetente",
+				"subject": "Assunto do E-mail",
+				"groups": "Grupos",
+				"sendTime": "Hora de Envio",
+				"unsubscribeLink": "Link de Cancelamento",
+				"threads": "Número de Threads",
+				"remark": "Observação",
+				"yes": "Sim",
+				"no": "Não",
+				"auto": "Auto"
+			},
+			"edit": {
+				"addTitle": "Adicionar Tarefa",
+				"editTitle": "Editar Tarefa",
+				"from": "De",
+				"to": "Para",
+				"displayName": "Nome de Exibição",
+				"displayNamePlaceholder": "Insira o nome de exibição",
+				"subject": "Assunto",
+				"subjectPlaceholder": "Insira o assunto do e-mail",
+				"recipients": "Destinatários",
+				"recipientsPlaceholder": "Selecione os grupos de destinatários",
+				"recipientsCount": "Enviar e-mails ({count} destinatários)",
+				"template": "Template de E-mail",
+				"saveOutbox": "Salvar na caixa de saída",
+				"ipWarmup": "Associar ao Sistema de Aquecimento de IP",
+				"ipWarmupTip": "Ativar isso limitará a taxa de envio",
+				"trackClick": "Rastrear Cliques",
+				"trackOpen": "Rastrear Aberturas",
+				"unsubscribeLink": "Link de cancelamento de assinatura",
+				"threads": "Threads",
+				"threadsAuto": "Auto",
+				"threadsCustom": "Personalizado",
+				"sendTime": "Hora de envio",
+				"sendTimeNow": "Enviar agora",
+				"sendTimeSchedule": "Agendar",
+				"remark": "Observação",
+				"remarkPlaceholder": "Insira uma observação",
+				"testEmail": "E-mail de teste",
+				"testEmailPlaceholder": "Insira o e-mail de teste",
+				"sendTest": "Enviar e-mail de teste",
+				"viewCase": "Ver exemplo",
+				"tags": "Tags",
+				"tagLogic": "Lógica de Tag",
+				"preview": {
+					"empty": "Selecione um template de e-mail para pré-visualizar"
+				},
+				"validation": {
+					"displayNameRequired": "Insira o nome de exibição",
+					"subjectRequired": "Insira o assunto do e-mail",
+					"recipientsRequired": "Selecione os destinatários",
+					"sendTimeRequired": "Selecione a hora de envio",
+					"testEmailRequired": "Insira o e-mail de teste",
+					"templateRequired": "Selecione um template de e-mail"
+				},
+				"discard": {
+					"title": "Aviso",
+					"content": "Deseja descartar as edições atuais?"
+				}
+			},
+			"createGroup": {
+				"title": "Criar Grupo",
+				"groupName": "Nome do Grupo",
+				"email": "E-mail",
+				"groupNamePlaceholder": "Insira o nome do grupo",
+				"validation": {
+					"groupNameRequired": "Insira o nome do grupo"
+				}
+			},
+			"loading": {
+				"creating": "Criando tarefa, aguarde...",
+				"updating": "Atualizando tarefa, aguarde...",
+				"deleting": "Excluindo tarefa, aguarde...",
+				"pausing": "Pausando tarefa, aguarde...",
+				"resuming": "Retomando tarefa, aguarde...",
+				"sendingTest": "Enviando e-mail de teste, aguarde..."
+			}
+		},
+		"template": {
+			"title": "Template",
+			"name": "Nome do Template",
+			"content": "Conteúdo do Template",
+			"uploadHtml": "Enviar Arquivo HTML",
+			"file": "Arquivo de Template",
+			"actions": {
+				"add": "Adicionar Template",
+				"preview": "Pré-visualizar",
+				"duplicate": "Duplicar",
+				"export": "Exportar",
+				"import": "Importar"
+			},
+			"columns": {
+				"name": "Nome do Template",
+				"type": "Tipo",
+				"createdAt": "Criado em"
+			},
+			"types": {
+				"drag": "Arrastar",
+				"html": "HTML",
+				"ai": "IA"
+			},
+			"edit": {
+				"confirm": "Confirmar",
+				"cancel": "Cancelar"
+			},
+			"search": {
+				"namePlaceholder": "Buscar nome do template"
+			},
+			"delete": {
+				"title": "Excluir Template",
+				"confirm": "Tem certeza de que deseja excluir o template {name}?"
+			},
+			"form": {
+				"name": "Nome do Template",
+				"type": "Tipo de Template",
+				"content": "Conteúdo do Template"
+			},
+			"add": {
+				"title": "Adicionar Template",
+				"namePlaceholder": "Insira o nome do template",
+				"validation": {
+					"nameRequired": "Insira o nome do template",
+					"uploadRequired": "Envie o arquivo HTML"
+				}
+			},
+			"preview": {
+				"title": "Pré-visualização do Template"
+			},
+			"loading": {
+				"creating": "Criando template, aguarde...",
+				"updating": "Atualizando template, aguarde...",
+				"copying": "Copiando template, aguarde...",
+				"deleting": "Excluindo template, aguarde..."
+			}
+		}
+	},
+	"template": {
+		"template": "Template",
+		"createTpl": {
+			"sourceUrl": "URL de Origem",
+			"useAiTools": "Use ferramentas de IA para gerar automaticamente o conteúdo do e-mail e aumentar sua eficiência.",
+			"create": "Criar",
+			"notices": {
+				"domainListEmpty": "Crie o primeiro domínio para o BillionMail enviar e-mails",
+				"aiConfigurationInvalid": "O modelo de IA não está configurado, você não pode usar IA para criar templates de e-mail",
+				"invalidBrandDomain": "Primeiro crie as informações de marca para o domínio"
+			},
+			"buttons": {
+				"createNow": "Criar Agora",
+				"configureNow": "Configurar Agora"
+			}
+		},
+		"ai": {
+			"title": "Template de IA",
+			"welcomeMessage": "Você pode dizer: Crie um e-mail de boas-vindas para usuários que ingressaram em {domain}",
+			"greeting": "Vamos criar um lindo template de e-mail.",
+			"brandName": "BillionMail",
+			"buttons": {
+				"regenerate": "Regenerar",
+				"info": "Info",
+				"view": "Visualizar",
+				"edit": "Editar",
+				"copy": "Copiar",
+				"copied": "Copiado",
+				"apply": "Aplicar"
+			},
+			"spintax": {
+				"instruction": "Use a sintaxe Spintax, com requisito de incluir {count} variações"
+			},
+			"tips": {
+				"saveShortcut": "[Ctrl + s] para salvar suas alterações"
+			},
+			"loading": {
+				"message": "Carregando... Aguarde."
+			},
+			"send": "Enviar"
+		}
+	},
+	"contacts": {
+		"subscribers": {
+			"joinGroup": "Entrar no Grupo",
+			"tags": "Tags",
+			"selectGroupHint": "Selecione um grupo à direita",
+			"trends": {
+				"title": "Tendências de Assinatura",
+				"subscriber": "Assinante"
+			},
+			"search": {
+				"emailPlaceholder": "Insira o endereço de e-mail para buscar"
+			},
+			"columns": {
+				"email": "E-mail",
+				"name": "Nome do Grupo",
+				"createdAt": "Hora de Criação",
+				"lastActiveAt": "Última Atividade"
+			},
+			"status": {
+				"subscribed": "Inscrito",
+				"unsubscribed": "Cancelado",
+				"unconfirmed": "Não Confirmado"
+			},
+			"labels": {
+				"status": "Status: ",
+				"tags": "Tags: ",
+				"active": "Ativo: "
+			},
+			"activeSelect": {
+				"options": {
+					"all": "Todos",
+					"yes": "Sim",
+					"no": "Não"
+				},
+				"timeOptions": {
+					"past7Days": "Últimos 7 dias",
+					"pastMonth": "Último mês",
+					"past90Days": "Últimos 90 dias",
+					"pastHalfYear": "Últimos 6 meses",
+					"pastYear": "Último ano"
+				}
+			},
+			"actions": {
+				"changeGroup": "Alterar Grupo",
+				"setTag": "Definir Tag"
+			},
+			"delete": {
+				"title": "Excluir Assinante",
+				"confirm": "Tem certeza de que deseja excluir o assinante {email}?"
+			},
+			"batchDelete": {
+				"title": "Exclusão em Lote",
+				"confirm": "Tem certeza de que deseja excluir os assinantes selecionados?"
+			},
+			"select": {
+				"prefix": "Grupo:"
+			},
+			"edit": {
+				"title": "Alterar Grupo",
+				"email": "E-mail",
+				"group": "Grupo",
+				"status": "Status",
+				"attributes": "Atributos",
+				"statusOptions": {
+					"subscribe": "Inscrever",
+					"unsubscribe": "Cancelar Inscrição"
+				},
+				"validation": {
+					"emailRequired": "Insira o e-mail",
+					"groupRequired": "Selecione o grupo"
+				}
+			},
+			"import": {
+				"title": "Importar Contatos",
+				"group": "Grupo",
+				"data": "Dados",
+				"pasteData": "Colar Dados",
+				"uploadFile": "Enviar Arquivo",
+				"pastePlaceholder": [
+					"Cole os dados, um e-mail por linha, atributos (opcional)",
+					"Exemplo: exemplo1@exemplo.com",
+					"exemplo1@exemplo.com,\"{\"\"idade\"\": \"\"13\"\", \"\"Sexo\"\": \"\"XXX\"\"}\""
+				],
+				"fileTypeHint": "Tipo de arquivo: csv, no máximo 5 MB",
+				"overwriteLabel": "Sobrescrever usuários existentes",
+				"overwriteDescription": "Indica se as informações dos clientes existentes na lista serão sobrescritas com os dados importados",
+				"subscriptionStatus": "Status de Assinatura",
+				"status": "Status",
+				"exampleCsvLabel": "Exemplo CSV",
+				"overwriteOptions": {
+					"no": "Não",
+					"yes": "Sim"
+				},
+				"subscriptionOptions": {
+					"subscribe": "Inscrever",
+					"unsubscribe": "Cancelar Inscrição"
+				},
+				"statusOptions": {
+					"confirmed": "Confirmado",
+					"unconfirmed": "Não Confirmado"
+				},
+				"validation": {
+					"groupRequired": "Selecione o grupo",
+					"dataRequired": "Cole os dados, um e-mail por linha",
+					"fileRequired": "Envie o arquivo"
+				}
+			},
+			"batchSetTag": {
+				"title": "Definir Tag em Lote",
+				"labels": {
+					"tag": "Tag",
+					"action": "Ação"
+				},
+				"actions": {
+					"add": "Adicionar",
+					"remove": "Remover"
+				}
+			},
+			"tagSelect": {
+				"manageTags": "Gerenciar Tags"
+			},
+			"loading": {
+				"importSubscribers": "Importando contatos, aguarde...",
+				"updateSubscriberGroup": "Atualizando grupo, aguarde...",
+				"deleteSubscriber": "Excluindo contatos, aguarde...",
+				"batchSetTag": "Processando, aguarde..."
+			}
+		},
+		"group": {
+			"search": {
+				"namePlaceholder": "Buscar por nome do grupo"
+			},
+			"columns": {
+				"name": "Nome do Grupo",
+				"subscribers": "Assinantes",
+				"unsubscribe": "Cancelados",
+				"createdAt": "Criado em",
+				"type": "Tipo"
+			},
+			"type": {
+				"doubleOptin": "Dupla Confirmação",
+				"singleOptin": "Confirmação Única"
+			},
+			"export": {
+				"title": "Exportar Grupo",
+				"confirm": "Exportar {count} grupo(s)?"
+			},
+			"form": {
+				"name": "Nome do Grupo",
+				"file": "Arquivo",
+				"nameRequired": "Insira o nome do grupo"
+			},
+			"add": {
+				"title": "Adicionar Grupo"
+			},
+			"rename": {
+				"title": "Renomear Grupo"
+			},
+			"delete": {
+				"title": "Excluir Grupo",
+				"confirm": "Tem certeza de que deseja excluir o grupo {name}?"
+			},
+			"fileUpload": {
+				"hint": "Tipo de arquivo: csv, no máximo 10 MB",
+				"emptyHint": "Um grupo vazio será criado quando nenhum arquivo for enviado"
+			},
+			"loading": {
+				"createGroup": "Criando grupo, aguarde...",
+				"updateGroup": "Atualizando grupo, aguarde...",
+				"deleteGroup": "Excluindo grupo, aguarde...",
+				"exportGroup": "Exportando, aguarde...",
+				"saveSettings": "Salvando, aguarde..."
+			}
+		},
+		"settings": {
+			"title": "Configurações",
+			"tabs": {
+				"subscribeForm": "Formulário de Assinatura",
+				"subscribeSettings": "Configurações de Assinatura",
+				"unsubscribeSettings": "Configurações de Cancelamento"
+			},
+			"subscribeForm": {
+				"separateSubscriptionPage": {
+					"title": "Página de Assinatura Separada",
+					"description": "Simplesmente copie e compartilhe esta URL com os usuários – o formulário de assinatura está pronto para uso."
+				},
+				"embeddableForm": {
+					"title": "Formulário Incorporável",
+					"description": "Incorpore facilmente este formulário de assinatura em suas páginas web."
+				}
+			},
+			"subscribeSettings": {
+				"listType": {
+					"label": "Tipo de Lista",
+					"placeholder": "Selecione o tipo de lista",
+					"options": {
+						"doubleOptin": "Dupla Confirmação",
+						"singleOptin": "Confirmação Única"
+					}
+				},
+				"confirmEmail": {
+					"subject": "Assunto do E-mail de Confirmação",
+					"redirectLink": "Link de Redirecionamento de Confirmação",
+					"redirectDescription": "Insira o link personalizado abaixo para redirecionar os usuários a uma página de confirmação para a assinatura com 'Dupla Confirmação'",
+					"emailContent": "E-mail de Confirmação",
+					"emailTip1": "Se você personalizar o e-mail de confirmação, não se esqueça de incluir o link de confirmação",
+					"emailTip2": "em algum lugar da sua mensagem"
+				},
+				"welcomeEmail": {
+					"subject": "Assunto do E-mail de Boas-vindas",
+					"redirectLink": "Link de Redirecionamento de Boas-vindas",
+					"redirectDescription": "Insira o link abaixo para direcionar os usuários a uma página de confirmação personalizada após se inscreverem com sucesso",
+					"emailContent": "E-mail de Boas-vindas",
+					"sendThroughTip": "As mensagens são enviadas por meio da",
+					"mailboxTip": "caixa de correio do domínio de envio padrão",
+					"enabledDescription": "Quando ativado, um e-mail de agradecimento será enviado ao usuário quando ele se inscrever pelo formulário de assinatura ou API. Isso não será acionado para usuários adicionados manualmente.",
+					"templateVariablesTip": "Você pode usar as informações coletadas no assunto e mensagem do seu e-mail de agradecimento, que são as Variáveis de Template."
+				},
+				"alreadySubscribed": {
+					"redirectLink": "Link de Redirecionamento para Já Inscrito"
+				}
+			},
+			"unsubscribeSettings": {
+				"subject": "Assunto do Cancelamento",
+				"redirectLink": "Link de Redirecionamento de Cancelamento",
+				"emailPage": "Página de E-mail de Cancelamento",
+				"enabledDescription": "Quando ativado, um e-mail de cancelamento será enviado aos usuários quando eles cancelarem a assinatura ou via API. Usuários adicionados manualmente não acionarão este recurso."
+			}
+		},
+		"suspend": {
+			"title": "E-mails Suspensos",
+			"buttons": {
+				"scanInvalidDomains": "Verificar Domínios Inválidos",
+				"scanLogs": "Registros de Verificação",
+				"autoBlockFailedEmails": "Bloquear automaticamente e-mails com falha"
+			},
+			"search": {
+				"emailPlaceholder": "Insira o e-mail"
+			},
+			"columns": {
+				"email": "E-mail",
+				"description": "Descrição",
+				"status": "Status",
+				"addTime": "Hora de Adição"
+			},
+			"status": {
+				"invalid": "Inválido",
+				"checking": "Verificando"
+			},
+			"confirm": {
+				"clear": {
+					"title": "Limpar",
+					"content": "Isso limpará todos os dados desse tipo, deseja continuar?"
+				},
+				"delete": {
+					"title": "Excluir",
+					"content": "Tem certeza de que deseja excluir [{email}]"
+				}
+			},
+			"scan": {
+				"title": "Verificar Domínios Inválidos",
+				"confirmText": "Verificar",
+				"form": {
+					"group": "Grupo",
+					"method": "Método",
+					"groupRequired": "Selecione o grupo"
+				},
+				"methods": {
+					"noOperation": "sem operação",
+					"addToExceptionTable": "Adicionado à tabela de prevenção de exceções",
+					"deleteFromGroup": "A caixa de correio inválida é excluída do grupo"
+				}
+			},
+			"scanLogs": {
+				"title": "Registros de Verificação",
+				"none": "Nenhum"
+			},
+			"api": {
+				"loading": {
+					"deleting": "Excluindo, aguarde...",
+					"scanning": "Verificando, aguarde...",
+					"clearing": "Limpando, aguarde...",
+					"setting": "Configurando, aguarde..."
+				}
+			}
+		},
+		"tags": {
+			"title": "Gerenciamento de Tags",
+			"addTag": "Adicionar Tag",
+			"bulkTag": "Tag em Lote",
+			"searchPlaceholder": "Buscar tags",
+			"columns": {
+				"name": "Nome da Tag",
+				"groupName": "Nome do Grupo",
+				"createTime": "Hora de Criação",
+				"actions": "Ações"
+			},
+			"delete": {
+				"title": "Excluir Tag",
+				"confirm": "Tem certeza de que deseja excluir esta tag 【{name}】?"
+			},
+			"bulk": {
+				"title": "Tag em lote para contatos",
+				"form": {
+					"group": "Grupo",
+					"tags": "Tags",
+					"emails": "E-mails",
+					"action": "Ação",
+					"emailsPlaceholder": "Cole os e-mails, um por linha"
+				},
+				"actions": {
+					"tagThese": "Marcar estes e-mails",
+					"tagExcept": "Marcar todos exceto estes e-mails"
+				}
+			},
+			"form": {
+				"title": {
+					"create": "Criar Tag",
+					"edit": "Editar Tag"
+				},
+				"fields": {
+					"name": "Nome da Tag",
+					"group": "Grupo"
+				},
+				"validation": {
+					"nameRequired": "Insira o nome da tag",
+					"groupRequired": "Selecione o grupo"
+				}
+			},
+			"loading": {
+				"creating": "Criando tag, aguarde...",
+				"deleting": "Excluindo tag, aguarde...",
+				"updating": "Atualizando tag, aguarde...",
+				"bulkSetting": "Configurando em lote, aguarde..."
+			}
+		}
+	},
+	"domain": {
+		"title": "Domínio de E-mail",
+		"addDomain": "Adicionar Domínio",
+		"help": "Adicione o domínio que deseja usar para enviar e-mails",
+		"columns": {
+			"domain": "Domínio",
+			"quota": "Cota",
+			"mailboxes": "Caixas de Correio",
+			"defaultMailboxSize": "Tamanho Padrão de Caixa de Correio",
+			"dedicatedIp": "IP Dedicado",
+			"actions": "Ações"
+		},
+		"ipSet": {
+			"title": "Configurações de IP Dedicado",
+			"titleWithDomain": "Configurações de IP Dedicado [{domain}]",
+			"dedicatedIp": "IP Dedicado: ",
+			"configFile": "Arquivo de Configuração: ",
+			"connectionStatus": "Status da Conexão: ",
+			"warning": "Você pode ativar o status de conexão do IP dedicado executando manualmente o seguinte comando no terminal SSH\nSe você tiver vários domínios que precisam configurar IPs dedicados, recomendamos configurar todos os domínios primeiro e depois executar o seguinte comando para evitar múltiplas interrupções ao servidor de e-mail",
+			"getCommand": "Obter Comando",
+			"copyCommand": "Copiar Comando",
+			"operationReminder": "Lembrete de Operação",
+			"fixCommandTip": "Se a execução do comando falhar, você pode executar este comando para corrigi-lo: ",
+			"understood": "Entendido",
+			"validation": {
+				"getCommandFirst": "Obtenha o comando primeiro"
+			}
+		},
+		"status": {
+			"default": "Padrão"
+		},
+		"actions": {
+			"dnsRecord": "Registros DNS",
+			"setDefault": "Definir como Padrão"
+		},
+		"notSpam": {
+			"checkNow": "Verificar Agora",
+			"logs": "Registros"
+		},
+		"checkLogs": {
+			"title": "Registros de Verificação"
+		},
+		"blacklistDetection": {
+			"title": "Verificação de Lista Negra",
+			"checking": "Verificando {results} que resolve para {ip} em {tested} listas negras conhecidas...",
+			"listed": "Listado: {count}",
+			"success": "Seu IP não existe na lista negra conhecida pelo aaPanel",
+			"columns": {
+				"blacklist": "Lista Negra",
+				"responseIp": "IP de Resposta",
+				"checkTime": "Hora da Verificação"
+			}
+		},
+		"setDefault": {
+			"title": "Definir Padrão [{domain}]",
+			"confirm": "Tem certeza de que deseja definir este domínio como padrão?"
+		},
+		"delete": {
+			"title": "Excluir Domínio",
+			"confirm": "Tem certeza de que deseja excluir o domínio [{domain}]?"
+		},
+		"waitAndCheckDomainStatus": {
+			"success": "Inicialização das informações de marca bem-sucedida.",
+			"error": "Falha na inicialização das informações de marca.",
+			"loading": "Inicializando informações de marca, aguarde..."
+		},
+		"form": {
+			"addTitle": "Adicionar Domínio",
+			"editTitle": "Editar Domínio",
+			"domain": "Domínio",
+			"domainPlaceholder": "Insira o domínio, ex.: billionmail.com",
+			"urlsPlacement": "Insira a URL, ex.: https://billionmail.com",
+			"aRecord": "Registro A",
+			"aRecordPlaceholder": "Insira o registro A, ex.: mail.aapanel.com",
+			"quota": "Cota do Domínio",
+			"mailboxCount": "Quantidade de Caixas de Correio",
+			"globalCatch": "Capturar Tudo",
+			"globalCatchPlaceholder": "Encaminhar e-mails inexistentes para este endereço",
+			"dedicatedIp": "IP Dedicado",
+			"notSet": "Não Definido",
+			"testConnection": "Testar Conexão",
+			"validation": {
+				"domainRequired": "O nome do domínio não pode estar vazio!",
+				"domainInputRequired": "Insira o domínio primeiro",
+				"dedicatedIpRequired": "Insira o IP dedicado primeiro"
+			},
+			"tips": {
+				"aRecordFailed": "Falha na resolução do registro A. Verifique se o domínio do registro A está resolvido para o IP do servidor",
+				"dnsSetup": "Você precisa adicionar um registro A no console do seu provedor DNS",
+				"cloudflare": "Se estiver usando CloudFlare, selecione [Somente DNS] ao adicionar registros"
+			},
+			"createBrandInfo": "Criar informações de marca automaticamente",
+			"modelNotice": "Para usar este recurso, você precisa integrar um modelo de IA primeiro.",
+			"integrateImmediately": "Integrar imediatamente",
+			"modelDescription": "A importação de informações baseada em IA analisa e cria automaticamente informações de marca a partir de domínios de e-mail. Após a criação, você pode modificá-las conforme desejar.",
+			"extractBrand": "Extrair marca e cor",
+			"analyzeStructure": "Analisar estrutura de conteúdo",
+			"importContent": "Importar imagens e conteúdo",
+			"customLogo": "Usar um logotipo personalizado (opcional)",
+			"specifyDomain": "Especificar um nome de domínio",
+			"addMoreUrls": "Adicionar mais URLs",
+			"maxUrl": "Máximo de 3 URLs podem ser preenchidas."
+		},
+		"dns": {
+			"title": "Registros DNS",
+			"verify": "Registros definidos, verificar resolução DNS",
+			"status": {
+				"ok": "OK",
+				"notSet": "Não Definido"
+			},
+			"columns": {
+				"domain": "Domínio"
+			},
+			"table": {
+				"recordType": "Tipo de Registro",
+				"host": "Host",
+				"value": "Valor",
+				"mxPriority": "Prioridade MX"
+			},
+			"step1": {
+				"title": "Etapa 1: Adicionar Registro A"
+			},
+			"step2": {
+				"title": "Etapa 2: Adicionar Registro MX",
+				"description": "Faça login no seu provedor de domínio e adicione um registro MX para o serviço de e-mail (copie os seguintes parâmetros diretamente)"
+			},
+			"step3": {
+				"title": "Etapa 3: Adicionar Registro TXT",
+				"description": "Adicione registros TXT para antispam de e-mail (copie os seguintes parâmetros diretamente)"
+			},
+			"step4": {
+				"title": "Etapa 4: Adicionar Registro PTR",
+				"description1": "(Opcional) O registro PTR é usado para pesquisa reversa de DNS",
+				"description2": "Entre em contato com seu provedor de IP para criar o registro PTR"
+			},
+			"dkim": {
+				"formatLabel": "Formato do Registro DKIM:",
+				"keySize": {
+					"option2048": "Chave RSA de 2048 bits",
+					"option1024": "Chave RSA de 1024 bits"
+				},
+				"tips": {
+					"line1": "O DKIM suporta chaves RSA de 2048 e 1024 bits.",
+					"line2": "Prefira chaves de 2048 bits para maior segurança.",
+					"line3": "Escolha com base na capacidade do seu provedor DNS."
+				}
+			}
+		},
+		"ssl": {
+			"expired": "Expirado",
+			"daysLeft": "{days} dias",
+			"notSet": "Não Definido",
+			"title": "SSL do Domínio",
+			"tabs": {
+				"otherCertificate": "Outro Certificado"
+			},
+			"cert": {
+				"brand": "Marca",
+				"domains": "Domínios do Certificado",
+				"privateKey": "Chave Privada (KEY)",
+				"certificate": "Certificado (CRT/PEM)",
+				"keyPlaceholder": "Insira o conteúdo da chave privada",
+				"certPlaceholder": "Insira o conteúdo do certificado"
+			},
+			"actions": {
+				"applyFree": "Solicitar Certificado Gratuito"
+			},
+			"tips": {
+				"paste": "Cole o conteúdo da KEY e CRT e salve",
+				"chainCheck": "Se o navegador indicar que a cadeia de certificados está incompleta, verifique se o certificado PEM está corretamente concatenado",
+				"pemFormat": "Certificado PEM = certificado do domínio .crt + certificado raiz (root_bundle).crt",
+				"defaultSite": "Quando nenhum site padrão SSL for especificado, sites sem configuração SSL usarão HTTPS para acessar sites com SSL ativado"
+			}
+		},
+		"edit": {
+			"pageTitle": "Domínio / Editar domínio",
+			"save": "Salvar",
+			"breadcrumb": {
+				"domain": "Domínio",
+				"editDomain": "Editar Domínio"
+			},
+			"tabs": {
+				"domainConfiguration": "Configuração do Domínio",
+				"projectDetails": "Detalhes do Projeto",
+				"companyProfile": "Perfil da Empresa",
+				"styling": "Estilo",
+				"sitemap": "Mapa do Site",
+				"footerSettings": "Configurações do Rodapé",
+				"aiSettings": "Configurações de IA"
+			},
+			"domainConfiguration": {
+				"title": "Configuração do Domínio de E-mail",
+				"domain": "Domínio",
+				"domainQuota": "Cota do Domínio",
+				"mailboxCount": "Quantidade de Caixas de Correio",
+				"catchAll": "Capturar Tudo",
+				"dedicatedIp": "IP Dedicado do Domínio",
+				"dedicatedIpDesc": "O domínio {domain} especificará este IP dedicado no iptables ao enviar e receber e-mails. Se o seu servidor tiver apenas um IP, você não precisa configurar esse recurso",
+				"notSet": "Não Definido",
+				"testConnection": "Testar Conexão",
+				"catchAllDesc": "Após preencher o e-mail aqui, todos os e-mails desconhecidos neste domínio serão encaminhados para este e-mail",
+				"domainQuotaDesc": "Define o espaço disponível para este domínio",
+				"mailboxCountDesc": "Define quantas caixas de correio podem ser criadas para este domínio",
+				"autoCreateBrand": "Criar informações de marca automaticamente",
+				"aiIntegrationWarning": "Para usar este recurso, você precisa integrar um modelo de IA primeiro.",
+				"integrateImmediately": "Integrar imediatamente",
+				"aiDescription": "A importação de informações baseada em IA analisa e cria automaticamente informações de marca a partir de domínios de e-mail. Após a criação, você pode modificá-las conforme desejar.",
+				"features": {
+					"extractBrand": "Extrair marca e cor",
+					"analyzeStructure": "Analisar estrutura de conteúdo",
+					"importContent": "Importar imagens e conteúdo",
+					"customLogo": "Usar um logotipo personalizado (opcional)"
+				},
+				"specifyDomain": "Especificar um nome de domínio",
+				"addMoreUrls": "Adicionar mais URLs",
+				"createNow": "Criar Imediatamente",
+				"brandInfo": "Informações de marca",
+				"noBrandInfo": "Nenhuma informação de marca disponível.",
+				"fillDomain": "Preencha o nome do domínio",
+				"fillValidDomain": "Preencha um nome de domínio válido",
+				"validation": {
+					"setDedicatedIpFirst": "Defina o IP dedicado do domínio primeiro"
+				},
+				"api": {
+					"testingConnection": "Testando conexão, aguarde..."
+				}
+			},
+			"projectDetails": {
+				"title": "Detalhes do Projeto",
+				"projectName": "Nome do Projeto",
+				"description": "Descrição",
+				"brandLogos": "Logotipos da Marca",
+				"logoSystem": "Sistema de Logotipo",
+				"logoSystemDesc": "Envie o sistema de logotipo da sua marca para manter uma identidade visual consistente no seu projeto",
+				"primaryLogo": "Logotipo Principal",
+				"primaryLogoDesc": "Versão horizontal para cabeçalhos",
+				"secondaryLogo": "Logotipo Secundário",
+				"secondaryLogoDesc": "Versão vertical/empilhada",
+				"favicon": "Favicon",
+				"faviconDesc": "Ícone para abas do navegador",
+				"loadingFailed": "falha ao carregar",
+				"knowledgeBase": "Base de Conhecimento",
+				"newFile": "Novo Arquivo",
+				"edit": "Editar",
+				"preview": "Pré-visualizar",
+				"newKnowledgeFile": "Novo Arquivo de Conhecimento",
+				"fileName": "Nome do Arquivo",
+				"day": "dias",
+				"hour": "horas",
+				"minute": "minutos",
+				"ago": "atrás",
+				"justNow": "agora mesmo",
+				"close": "Fechar",
+				"cancel": "Cancelar",
+				"create": "Criar",
+				"notice": "Aviso",
+				"sureDel": "Tem certeza de que deseja excluir?"
+			},
+			"companyProfile": {
+				"title": "Detalhes da Empresa",
+				"legalCompanyName": "Razão Social",
+				"website": "Site",
+				"organizationNumber": "CNPJ / Número de Organização",
+				"additionalInfo": "Informações Adicionais da Empresa",
+				"contactInfo": "Informações de Contato",
+				"contactEmail": "E-mail de Contato",
+				"phoneNumber": "Número de Telefone",
+				"supportUrl": "URL de Suporte"
+			},
+			"styling": {
+				"colorPalette": "Paleta de Cores",
+				"accentColor": "Cor de Destaque",
+				"textColor": "Cor do Texto",
+				"pageBackground": "Fundo da Página",
+				"containerBackground": "Fundo do Contêiner",
+				"linkFooterColor": "Cor de link no rodapé",
+				"linkSocialColor": "Cor de link social",
+				"typography": "Tipografia",
+				"headingFont": "Fonte de Título",
+				"bodyFont": "Fonte do Corpo",
+				"preview": "Pré-visualização:",
+				"previewText": "A raposa marrom rápida pula sobre o cão preguiçoso",
+				"typographyGuidelines": "Diretrizes de Tipografia:",
+				"webSafeFonts": "Use fontes web seguras para melhor compatibilidade",
+				"fallbackFonts": "Sempre inclua fontes de fallback para melhor desempenho"
+			},
+			"sitemap": {
+				"title": "Mapa do Site",
+				"addLink": "Adicionar link"
+			},
+			"footerSettings": {
+				"title": "Configurações do Rodapé",
+				"additionalContent": "Conteúdo Adicional",
+				"copyrightText": "Texto de Direitos Autorais"
+			},
+			"aiSettings": {
+				"title": "Configurações de IA",
+				"defaultInstructions": "Instruções Padrão de IA",
+				"emailGenerationInstructions": "Instruções para Geração de E-mail",
+				"instructionsDescription": "Estas instruções serão usadas como diretrizes padrão ao gerar novos e-mails. Você pode substituir essas instruções para e-mails individuais conforme necessário."
+			},
+			"common": {
+				"daysAgo": "dias atrás",
+				"noBrandInfo": "Não há informações de marca para o domínio atual."
+			}
+		},
+		"api": {
+			"loading": {
+				"creating": "Criando domínio, aguarde...",
+				"updating": "Atualizando domínio, aguarde...",
+				"deleting": "Excluindo domínio, aguarde...",
+				"settingSSL": "Configurando certificado SSL, aguarde...",
+				"refreshingDns": "Atualizando registros DNS, aguarde...",
+				"applyingCert": "Solicitando certificado, aguarde...",
+				"settingDefault": "Definindo domínio padrão, aguarde...",
+				"settingBrandInfo": "Configurando informações de marca do domínio, aguarde...",
+				"testingConnection": "Testando conexão, aguarde...",
+				"detecting": "Detectando, aguarde..."
+			}
+		}
+	},
+	"mailbox": {
+		"title": "Gerenciamento de Caixas de Correio",
+		"actions": {
+			"add": "Adicionar Caixa de Correio",
+			"batchAdd": "Adicionar em Lote",
+			"batchDelete": "Excluir em Lote",
+			"exportAll": "Exportar Tudo"
+		},
+		"search": {
+			"usernamePlaceholder": "Buscar usuário"
+		},
+		"domain": {
+			"selectPlaceholder": "Selecionar domínio"
+		},
+		"columns": {
+			"username": "Usuário",
+			"password": "Senha",
+			"loginInfo": "Informações de Login (WebMail / SMTP)",
+			"quota": "Cota",
+			"type": "Tipo",
+			"status": "Status"
+		},
+		"userType": {
+			"admin": "Administrador",
+			"general": "Usuário Geral"
+		},
+		"form": {
+			"addTitle": "Adicionar Caixa de Correio",
+			"editTitle": "Editar Caixa de Correio",
+			"batchAddTitle": "Adicionar em Lote",
+			"exportTitle": "Exportar Caixa de Correio",
+			"importTitle": "Importar Caixa de Correio",
+			"emailAddress": "Endereço de E-mail",
+			"password": "Senha",
+			"passwordPlaceholder": "Insira a senha da caixa de correio",
+			"quota": "Cota",
+			"userType": "Tipo de Usuário",
+			"status": "Status",
+			"domain": "Domínio",
+			"prefix": "Prefixo do E-mail",
+			"count": "Quantidade de E-mails"
+		},
+		"validation": {
+			"emailRequired": "Insira o endereço de e-mail",
+			"passwordLength": "A senha deve ter pelo menos 8 caracteres",
+			"passwordFormat": "A senha deve conter pelo menos uma letra maiúscula, uma minúscula e um número",
+			"domainRequired": "Selecione o domínio",
+			"prefixRequired": "Insira o prefixo do e-mail",
+			"countRequired": "Insira a quantidade de e-mails",
+			"fileRequired": "Selecione o arquivo para envio"
+		},
+		"delete": {
+			"title": "Excluir Caixa de Correio",
+			"confirm": "Tem certeza de que deseja excluir a caixa de correio [{name}]?",
+			"batchConfirm": "Tem certeza de que deseja excluir {count} caixas de correio?"
+		},
+		"loginInfo": {
+			"template": "WebMail: {webmail}\nUsuário: {username}\nSenha: {password}\nServiço POP [ Endereço: {mx} Porta: 110/995 ]\nServiço IMAP [ Endereço: {mx} Porta: 143/993 ]\nServiço SMTP [ Endereço: {mx} Porta: 25/465/587 ]"
+		},
+		"api": {
+			"loading": {
+				"creating": "Criando Caixa de Correio, aguarde...",
+				"updating": "Atualizando Caixa de Correio, aguarde...",
+				"deleting": "Excluindo Caixa de Correio, aguarde...",
+				"exporting": "Exportando Caixa de Correio, aguarde...",
+				"importing": "Importando Caixa de Correio, aguarde..."
+			}
+		}
+	},
+	"smtp": {
+		"title": "Gerenciamento de Serviço SMTP Relay",
+		"description": "Gerencie seus serviços de relay SMTP com suporte a múltiplos provedores",
+		"empty": "Nenhum serviço de relay SMTP disponível",
+		"providers": {
+			"gmail": "Gmail",
+			"mailgun": "Mailgun",
+			"aws": "AWS SES",
+			"sendgrid": "SendGrid",
+			"custom": "SMTP Personalizado"
+		},
+		"delete": {
+			"title": "Excluir Relay",
+			"confirm": "Tem certeza de que deseja excluir este serviço de relay [{name}]?"
+		},
+		"card": {
+			"domain": "Domínio Vinculado",
+			"server": "Servidor",
+			"port": "Porta",
+			"username": "Usuário",
+			"dnsUpdateRequired": "Registros DNS precisam ser atualizados"
+		},
+		"form": {
+			"addTitle": "Adicionar SMTP",
+			"editTitle": "Editar SMTP",
+			"remark": "Observação",
+			"domain": "Domínio Vinculado",
+			"server": "Servidor SMTP",
+			"port": "Porta SMTP",
+			"username": "Usuário",
+			"password": "Senha",
+			"authMethod": "Método de Autenticação",
+			"advancedFeatures": "Opções Avançadas",
+			"testConnection": "Testar Conexão",
+			"bind": " [Vinculado]",
+			"skipTlsVerify": "Ignorar Verificação TLS",
+			"tlsOptions": {
+				"skip": "Ignorar",
+				"noSkip": "Não Ignorar"
+			},
+			"validation": {
+				"nameRequired": "Insira um nome para o relay",
+				"domainRequired": "Selecione um domínio vinculado",
+				"serverRequired": "Insira um servidor SMTP",
+				"portRequired": "Insira uma porta SMTP",
+				"usernameRequired": "Insira um usuário",
+				"passwordRequired": "Insira uma senha"
+			}
+		},
+		"status": {
+			"online": "Online",
+			"offline": "Offline"
+		},
+		"api": {
+			"loading": {
+				"adding": "Adicionando SMTP, aguarde...",
+				"editing": "Editando SMTP, aguarde...",
+				"testing": "Testando conexão SMTP, aguarde...",
+				"deleting": "Excluindo SMTP, aguarde..."
+			}
+		}
+	},
+	"settings": {
+		"title": "Configurações",
+		"service": {
+			"title": "Status do Serviço",
+			"tips": "Dicas: Ctrl+F Buscar palavras-chave, Ctrl+S Salvar, Ctrl+H Buscar e substituir",
+			"editTitle": "Edição Online {name}",
+			"columns": {
+				"name": "Nome do Serviço",
+				"status": "Status"
+			},
+			"status": {
+				"running": "Em Execução",
+				"stopped": "Parado"
+			},
+			"actions": {
+				"restart": "Reiniciar"
+			},
+			"restart": {
+				"title": "Reiniciar Serviço",
+				"confirm": "Tem certeza de que deseja reiniciar [{name}]?"
+			}
+		},
+		"bcc": {
+			"title": "Gerenciamento de BCC",
+			"add": "Adicionar BCC",
+			"edit": "Editar BCC",
+			"needCopy": "Precisa de Cópia",
+			"copyTo": "Copiar para",
+			"domain": "Domínio",
+			"type": "Tipo de BCC",
+			"status": "Status",
+			"active": "Ativo",
+			"types": {
+				"sender": "Ao enviar",
+				"recipient": "Ao receber"
+			},
+			"delete": {
+				"title": "Excluir BCC [{address}]",
+				"content": "Deseja excluir a configuração de BCC?"
+			},
+			"placeholders": {
+				"needCopy": "Insira os usuários que precisam de BCC",
+				"copyTo": "Insira o e-mail que deve receber a cópia BCC"
+			},
+			"loading": {
+				"adding": "Adicionando BCC, aguarde...",
+				"saving": "Salvando BCC, aguarde...",
+				"deleting": "Excluindo BCC, aguarde..."
+			}
+		},
+		"forward": {
+			"add": "Adicionar Encaminhamento",
+			"edit": "Editar Encaminhamento",
+			"columns": {
+				"address": "Endereço",
+				"goto": "Destino",
+				"domain": "Domínio",
+				"created": "Criado em",
+				"modified": "Modificado em",
+				"status": "Status"
+			},
+			"form": {
+				"status": "Status",
+				"forwardedUsers": "Usuários encaminhados",
+				"forwardedUsersPlaceholder": "Insira a caixa de correio que precisa ser encaminhada",
+				"domain": "Domínio",
+				"domainPlaceholder": "Nome de domínio dos usuários encaminhados",
+				"receivingUser": "Usuário receptor",
+				"receivingUserPlaceholder": "Usuários que precisam aceitar os e-mails encaminhados. Se houver vários, separe-os com novas linhas"
+			},
+			"delete": {
+				"title": "Excluir encaminhamento de e-mail",
+				"content": "Tem certeza de que deseja excluir o encaminhamento de e-mail [{address}]?"
+			},
+			"loading": {
+				"adding": "Adicionando encaminhamento de e-mail, aguarde...",
+				"editing": "Editando encaminhamento de e-mail, aguarde...",
+				"deleting": "Excluindo encaminhamento de e-mail, aguarde..."
+			}
+		},
+		"common": {
+			"confirm": "Atualizar",
+			"security": {
+				"title": "Configurações de Segurança",
+				"username": "Alterar Usuário",
+				"currentUsername": "Usuário Atual",
+				"newUsernamePlaceholder": "Insira o novo usuário",
+				"usernameRule": "4-20 caracteres, letras e números",
+				"usernameExists": "Usuário já existe",
+				"changePassword": "Alterar Senha",
+				"currentPassword": "Senha Atual",
+				"newPassword": "Nova Senha",
+				"confirmPassword": "Confirmar Nova Senha",
+				"passwordStrength": "Força da Senha",
+				"passwordMismatch": "As senhas não coincidem",
+				"strength": {
+					"weak": "Fraca",
+					"medium": "Média",
+					"strong": "Forte"
+				},
+				"securityPath": "Alterar Caminho de Segurança",
+				"currentPath": "Caminho Atual",
+				"newPathPlaceholder": "Insira o novo caminho, ex.: admin-abc123",
+				"pathRule": "Recomenda-se usar um caminho complexo para maior segurança",
+				"usernameValidation": {
+					"lengthError": "O comprimento do usuário deve estar entre 4 e 20 caracteres",
+					"formatError": "O usuário deve ser composto por letras, números ou sublinhados",
+					"duplicateError": "O usuário não pode ser igual ao usuário atual"
+				}
+			},
+			"network": {
+				"title": "Configuração de Rede",
+				"domain": "Configurações de Domínio",
+				"currentDomain": "O nome de domínio de acesso do console",
+				"newDomainPlaceholder": "Insira o novo domínio, ex.: admin.seudominio.com",
+				"domainRule": "Insira um domínio válido",
+				"ssl": "Configuração do Certificado SSL",
+				"sslEnabled": "SSL Ativado",
+				"certStatus": "Status do Certificado",
+				"certValid": "({days} dias restantes)",
+				"sslCert": "Certificado SSL (formato PEM)",
+				"sslKey": "Chave Privada (formato PEM)",
+				"certPlaceholder": "-----BEGIN CERTIFICATE-----\nMIIFazCCA1OgAwIBAgIURv...\n-----END CERTIFICATE-----",
+				"keyPlaceholder": "-----BEGIN PRIVATE KEY-----\nMIIEvQIBADANBgkqhkiG...\n-----END PRIVATE KEY-----",
+				"updateSSL": "Atualizar Certificado SSL",
+				"certValidStatus": "Certificado Válido",
+				"certExpiredStatus": "Certificado Expirado",
+				"certExpireTime": "Certificado expira em: {time}"
+			},
+			"system": {
+				"title": "Configuração do Sistema",
+				"port": "Configurações de Porta",
+				"currentPort": "Porta Atual",
+				"terminalRequired": "Esta configuração requer operação no terminal",
+				"copyCommand": "Copie o comando acima e execute-o no terminal do servidor",
+				"commandCopied": "Comando copiado para a área de transferência",
+				"timezone": "Configurações de Fuso Horário",
+				"currentTime": "Fuso Horário Atual do Sistema"
+			},
+			"ipWhitelist": {
+				"title": "Lista Branca de IPs",
+				"enable": "Ativar",
+				"disable": "Desativar",
+				"add": "Adicionar",
+				"clear": "Limpar",
+				"description": "Permitir apenas os IPs da lista para acessar. Comando no terminal para desativar: bm.sh cancel-ip-limit",
+				"placeholder": "Insira o endereço IP",
+				"validation": {
+					"ipRequired": "Insira o endereço IP"
+				},
+				"confirm": {
+					"deleteTitle": "Excluir IP da Lista Branca",
+					"deleteContent": "Confirmar exclusão do IP da lista branca: {ip}",
+					"enableTitle": "Ativar Lista Branca de IPs",
+					"disableTitle": "Desativar Lista Branca de IPs",
+					"enableContent": "Confirmar ativação da lista branca de IPs, somente IPs da lista poderão acessar após ativar",
+					"disableContent": "Confirmar desativação da lista branca de IPs, todos os IPs poderão acessar após desativar",
+					"clearTitle": "Limpar Lista Branca de IPs",
+					"clearContent": "Confirmar limpeza da lista branca de IPs, todos os IPs poderão acessar após limpar"
+				}
+			},
+			"proxy": {
+				"title": "Proxy Reverso",
+				"description": "Endereço do proxy reverso, usado para exposição externa, como: listas de assinatura, e-mails de cancelamento, etc.",
+				"placeholder": "Insira o endereço do proxy reverso",
+				"formatTip": "Formato: https://example.com",
+				"reset": "Redefinir",
+				"resetConfirm": {
+					"title": "Redefinir Proxy Reverso",
+					"content": "Confirmar redefinição do proxy reverso?"
+				}
+			},
+			"api": {
+				"title": "Configurações da API",
+				"enableApi": "Ativar API",
+				"apiDocUrl": "URL da Documentação da API",
+				"swaggerUrl": "URL do Swagger",
+				"token": "Token",
+				"confirm": {
+					"enable": "Ativar API",
+					"disable": "Desativar API",
+					"enableContent": "Deseja ativar as configurações da API?",
+					"disableContent": "Deseja desativar as configurações da API?"
+				}
+			},
+			"notifySettings": {
+				"title": "Configurações de Notificação",
+				"blacklist": {
+					"title": "Notificar-me quando um IP/Domínio for listado na lista negra",
+					"alarmSet": "Alarme Definido",
+					"alarmSettings": {
+						"title": "Configurações de Alarme",
+						"name": "Nome",
+						"senderEmail": "E-mail do Remetente",
+						"smtpPassword": "Senha SMTP",
+						"smtpServer": "Servidor SMTP",
+						"port": "Porta",
+						"recipientEmail": "E-mail do Destinatário"
+					},
+					"autoCheck": {
+						"title": "Detectar listas negras automaticamente",
+						"confirm": {
+							"enableTitle": "Ativar detecção automática de listas negras",
+							"disableTitle": "Desativar detecção automática de listas negras",
+							"enableContent": "Tem certeza de que deseja iniciar o serviço de detecção automática de listas negras?",
+							"disableContent": "Tem certeza de que deseja parar o serviço de detecção automática de listas negras?"
+						}
+					}
+				}
+			},
+			"retention": {
+				"title": "Tempo de retenção de e-mails",
+				"currentDays": "{days} dia(s)",
+				"trashHint": "Tempo de retenção para e-mails na Lixeira",
+				"day": "Dias"
+			}
+		},
+		"api": {
+			"loading": {
+				"restarting": "Reiniciando serviço, aguarde...",
+				"saving": "Salvando configuração, aguarde...",
+				"setting": "Configurando, aguarde...",
+				"settingSSL": "Configurando SSL, aguarde...",
+				"applyingCert": "Solicitando certificado, aguarde...",
+				"adding": "Adicionando, aguarde...",
+				"deleting": "Excluindo, aguarde...",
+				"clearing": "Limpando, aguarde..."
+			}
+		},
+		"aiModel": {
+			"modelId": "ID do Modelo",
+			"modelAlias": "Alias do Modelo",
+			"modelFeature": "Funcionalidade do Modelo",
+			"contentLength": "Comprimento Máximo do Contexto",
+			"supplierTitle": "Título do Fornecedor",
+			"supplierName": "Nome do Fornecedor",
+			"cancel": "Cancelar",
+			"confirm": "Confirmar",
+			"aPIKey": "Chave de API",
+			"apiPath": "URL Base",
+			"check": "Verificar",
+			"getKey": "Clique para Obter Chave",
+			"example": "Exemplo",
+			"saveAPI": "Salvar API",
+			"model": "Modelo",
+			"byDefault": "Por padrão, todos os modelos são obtidos de /models",
+			"addModel": "Adicionar Modelo"
+		}
+	},
+	"logs": {
+		"title": "Registros",
+		"table": {
+			"columns": {
+				"username": "Usuário",
+				"type": "Tipo",
+				"operatingTime": "Hora da Operação",
+				"details": "Detalhes"
+			}
+		},
+		"filter": {
+			"all": "Todos"
+		},
+		"search": {
+			"placeholder": "Insira detalhes/IP para buscar"
+		}
+	},
+	"api": {
+		"title": "API de Envio",
+		"timeRange": "Período: ",
+		"status": "Status: ",
+		"search": "Buscar: ",
+		"searchPlaceholder": "Insira o nome da API",
+		"refreshData": "Atualizar Dados",
+		"createNew": "Criar API",
+		"statusOptions": {
+			"all": "Todos",
+			"active": "Ativo",
+			"inactive": "Inativo"
+		},
+		"columns": {
+			"apiName": "Nome da API",
+			"apiKey": "Chave da API",
+			"sendCount": "Quantidade Enviada",
+			"openRate": "Taxa de Abertura",
+			"clickRate": "Taxa de Clique",
+			"bounceRate": "Taxa de Devolução",
+			"status": "Status"
+		},
+		"statusLabels": {
+			"active": "Ativo",
+			"inactive": "Inativo"
+		},
+		"confirmDelete": {
+			"title": "Excluir API [{apiName}]",
+			"content": "Tem certeza de que deseja excluir esta API?"
+		},
+		"overview": {
+			"totalSend": "Total Enviado",
+			"avgOpenRate": "Taxa Média de Abertura",
+			"avgClickRate": "Taxa Média de Clique",
+			"avgBounceRate": "Taxa Média de Devolução"
+		},
+		"form": {
+			"apiName": "Nome da API",
+			"status": "Status",
+			"ipWhitelist": "Lista Branca de IPs",
+			"apiNamePlaceholder": "Insira o nome da API",
+			"ipWhitelistPlaceholder": "Múltiplos IPs separados por vírgulas, vazio significa sem restrição",
+			"advancedFeatures": "Funcionalidades Avançadas",
+			"validation": {
+				"apiNameRequired": "Insira o nome da API",
+				"addresserRequired": "Selecione o remetente",
+				"templateRequired": "Selecione o template"
+			},
+			"title": {
+				"edit": "Editar API",
+				"add": "Adicionar API"
+			},
+			"group": {
+				"label": "Grupos de Destinatários",
+				"tips": {
+					"choose": "Selecionando um grupo: Todos os novos contatos adicionados via esta API serão automaticamente adicionados ao grupo selecionado.",
+					"autoCreate": "Sem grupo selecionado: O sistema criará automaticamente um grupo dedicado para esta API para armazenar todos os novos contatos."
+				}
+			}
+		},
+		"loading": {
+			"creating": "Criando, aguarde...",
+			"updating": "Atualizando, aguarde...",
+			"deleting": "Excluindo, aguarde...",
+			"testing": "Testando, aguarde..."
+		}
+	},
+	"sequences": {
+		"search": {
+			"placeholder": "Buscar sequências..."
+		},
+		"empty": "Nenhuma sequência ainda",
+		"columns": {
+			"name": "Nome",
+			"status": "Status",
+			"steps": "Etapas",
+			"sent": "Enviados",
+			"opens": "Aberturas",
+			"replies": "Respostas",
+			"created": "Criado em"
+		},
+		"detail": {
+			"steps": "Etapas da Sequência",
+			"stats": "Estatísticas",
+			"stepNumber": "Etapa",
+			"subject": "Assunto",
+			"status": "Status",
+			"sentAt": "Enviado em",
+			"opened": "Aberto",
+			"clicked": "Clicado",
+			"replied": "Respondido"
+		}
+	},
+	"leads": {
+		"search": {
+			"placeholder": "Buscar leads..."
+		},
+		"empty": "Nenhum lead ainda",
+		"columns": {
+			"businessName": "Nome da Empresa",
+			"ownerName": "Nome do Proprietário",
+			"ownerEmail": "E-mail do Proprietário",
+			"status": "Status",
+			"category": "Categoria",
+			"city": "Cidade"
+		}
+	},
+	"enrichment": {
+		"scraper": {
+			"title": "Configuração do Scraper",
+			"query": "Consulta de Busca",
+			"queryPlaceholder": "ex.: dentista, encanador, restaurante",
+			"location": "Localização",
+			"maxResults": "Máximo de Resultados",
+			"start": "Iniciar Scraping"
+		},
+		"pipeline": {
+			"title": "Status do Pipeline",
+			"scraped": "Coletado",
+			"enriching": "Enriquecendo",
+			"personalized": "Personalizado",
+			"queued": "Na Fila"
+		}
+	}
+}
