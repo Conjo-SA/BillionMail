@@ -142,7 +142,10 @@ services:
 
 
     webmail-billionmail:
-      image: roundcube/roundcubemail:1.6.11-fpm-alpine
+      build:
+        context: ./Dockerfiles/webmail
+        dockerfile: Dockerfile
+      image: billionmail/webmail:local
       hostname: roundcube
       depends_on:
         - pgsql-billionmail
