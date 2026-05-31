@@ -1549,6 +1549,7 @@
 			"apiName": "API Name",
 			"apiKey": "API Key",
 			"sendCount": "Send Count",
+			"usage": "Usage (Day/Month)",
 			"openRate": "Open Rate",
 			"clickRate": "Click Rate",
 			"bounceRate": "Bounce Rate",
@@ -1575,6 +1576,10 @@
 			"apiNamePlaceholder": "Please enter API name",
 			"ipWhitelistPlaceholder": "Multiple IPs separated by commas, empty means no restriction",
 			"advancedFeatures": "Advanced Features",
+			"templateOptionalPlaceholder": "Select template (optional, leave empty for direct send)",
+			"dailyLimit": "Daily Limit",
+			"monthlyLimit": "Monthly Limit",
+			"limitPlaceholder": "0 = unlimited",
 			"validation": {
 				"apiNameRequired": "Please enter API name",
 				"addresserRequired": "Please select sender",
@@ -1597,6 +1602,27 @@
 			"updating": "Updating, please wait...",
 			"deleting": "Deleting, please wait...",
 			"testing": "Testing, please wait..."
+		},
+		"directSend": {
+			"collapseTitle": "Direct Send API Reference",
+			"description": "Send transactional emails inline without a pre-configured template. Ideal for OTPs, password resets, and order confirmations.",
+			"exampleTitle": "Example (curl)",
+			"fields": {
+				"endpoint": "Endpoint",
+				"auth": "Authentication"
+			},
+			"table": {
+				"field": "Field",
+				"required": "Required",
+				"description": "Description",
+				"rows": {
+					"to": "Recipient email address",
+					"subject": "Email subject line",
+					"html": "Full HTML body",
+					"from": "Sender address (overrides API default)",
+					"from_name": "Sender display name (overrides API default)"
+				}
+			}
 		}
 	},
 	"sequences": {

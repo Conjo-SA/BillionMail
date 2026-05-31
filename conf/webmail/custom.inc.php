@@ -3,7 +3,10 @@
     $config['product_name'] = 'BillionMail';
 
     $config['mime_types'] = '/var/roundcube/config/mime.types';
-       
+
+    # Skin
+    $config['skin'] = 'elastic2025';
+
     # Plugins
     $config['plugins'] = array('password','userinfo','newmail_notifier','emoticons','zipdownload');
 

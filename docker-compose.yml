@@ -152,6 +152,7 @@ services:
         - ./webmail-data:/var/www/html
         - ./conf/webmail/mime.types:/var/roundcube/config/mime.types
         - ./conf/webmail:/var/roundcube/config
+        - ./conf/webmail/skins/elastic2025:/var/www/html/skins/elastic2025
         - ./conf/php:/usr/local/etc
         - ./php-sock/:/var/run/
       environment:

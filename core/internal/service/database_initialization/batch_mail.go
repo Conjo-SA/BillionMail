@@ -260,6 +260,12 @@ func init() {
 
 		//api_templates
 		_ = AddColumnIfNotExists("api_templates", "group_id", "INTEGER", "0", true)
+		_ = AddColumnIfNotExists("api_templates", "daily_limit", "INTEGER", "0", true)
+		_ = AddColumnIfNotExists("api_templates", "monthly_limit", "INTEGER", "0", true)
+
+		// api_mail_logs direct send
+		_ = AddColumnIfNotExists("api_mail_logs", "custom_subject", "TEXT", "''", false)
+		_ = AddColumnIfNotExists("api_mail_logs", "custom_content", "TEXT", "''", false)
 
 		// unsubscribe_records
 		_ = DropForeignKeyIfExists("unsubscribe_records", "group_id")

@@ -26,13 +26,15 @@ func (c *ControllerV1) ApiTemplatesUpdate(ctx context.Context, req *v1.ApiTempla
 		return nil, gerror.New(public.LangCtx(ctx, "API does not exist"))
 	}
 
-	// verify if template exists
-	count, err = g.DB().Model("email_templates").Where("id", req.TemplateId).Count()
-	if err != nil {
-		return nil, err
-	}
-	if count == 0 {
-		return nil, gerror.New(public.LangCtx(ctx, "Email template does not exist"))
+	// verify if template exists (only required when template_id > 0)
+	if req.TemplateId > 0 {
+		count, err = g.DB().Model("email_templates").Where("id", req.TemplateId).Count()
+		if err != nil {
+			return nil, err
+		}
+		if count == 0 {
+			return nil, gerror.New(public.LangCtx(ctx, "Email template does not exist"))
+		}
 	}
 
 	tx, err := g.DB().Begin(ctx)
@@ -49,18 +51,20 @@ func (c *ControllerV1) ApiTemplatesUpdate(ctx context.Context, req *v1.ApiTempla
 	now := time.Now().Unix()
 
 	updateMap := g.Map{
-		"api_name":    req.ApiName,
-		"template_id": req.TemplateId,
-		"subject":     req.Subject,
-		"addresser":   req.Addresser,
-		"full_name":   req.FullName,
-		"unsubscribe": req.Unsubscribe,
-		"track_open":  req.TrackOpen,
-		"track_click": req.TrackClick,
-		"active":      req.Active,
-		"expire_time": req.ExpireTime,
-		"update_time": now,
-		"group_id":   req.GroupId,
+		"api_name":      req.ApiName,
+		"template_id":   req.TemplateId,
+		"subject":       req.Subject,
+		"addresser":     req.Addresser,
+		"full_name":     req.FullName,
+		"unsubscribe":   req.Unsubscribe,
+		"track_open":    req.TrackOpen,
+		"track_click":   req.TrackClick,
+		"active":        req.Active,
+		"expire_time":   req.ExpireTime,
+		"update_time":   now,
+		"group_id":      req.GroupId,
+		"daily_limit":   req.DailyLimit,
+		"monthly_limit": req.MonthlyLimit,
 	}
 
 	_, err = tx.Model("api_templates").

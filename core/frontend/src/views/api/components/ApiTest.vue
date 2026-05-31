@@ -9,8 +9,11 @@
 					</n-input>
 				</div>
 			</n-form-item>
-			<n-form-item label="Command">
+			<n-form-item label="Template Send">
 				<bt-code :code="commandRef" language="bash"></bt-code>
+			</n-form-item>
+			<n-form-item :label="$t('api.directSend.collapseTitle')">
+				<bt-code :code="directCommandRef" language="bash"></bt-code>
 			</n-form-item>
 		</bt-form>
 	</modal>
@@ -24,9 +27,14 @@ import type { Api } from '../types/base'
 const { t } = useI18n()
 
 const command = ref(``)
+const directCommand = ref(``)
 
 const commandRef = computed(() => {
 	return command.value.replaceAll('$email', form.recipient)
+})
+
+const directCommandRef = computed(() => {
+	return directCommand.value.replaceAll('$email', form.recipient)
 })
 
 const form = reactive({
@@ -56,6 +64,16 @@ const [Modal, modalApi] = useModal({
 -d '{
 	"recipient": "$email"
 }'`
+
+				const directUrl = row.server_addresser.replace(/\/send$/, '/send_direct')
+				directCommand.value = `curl -X POST '${directUrl}' \\
+-H 'X-API-Key: ${row.api_key}' \\
+-H 'Content-Type: application/json' \\
+-d '{
+	"to": "$email",
+	"subject": "Test email",
+	"html": "<p>Hello from BillionMail Direct Send API!</p>"
+}'`
 			}
 		} else {
 			resetForm()
@@ -65,3 +83,4 @@ const [Modal, modalApi] = useModal({
 </script>
 
 <style lang="scss" scoped></style>
+

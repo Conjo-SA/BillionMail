@@ -1549,6 +1549,7 @@
 			"apiName": "Nome da API",
 			"apiKey": "Chave da API",
 			"sendCount": "Quantidade Enviada",
+			"usage": "Uso (Dia/Mês)",
 			"openRate": "Taxa de Abertura",
 			"clickRate": "Taxa de Clique",
 			"bounceRate": "Taxa de Devolução",
@@ -1575,6 +1576,10 @@
 			"apiNamePlaceholder": "Insira o nome da API",
 			"ipWhitelistPlaceholder": "Múltiplos IPs separados por vírgulas, vazio significa sem restrição",
 			"advancedFeatures": "Funcionalidades Avançadas",
+			"templateOptionalPlaceholder": "Selecione o template (opcional, deixe vazio para envio direto)",
+			"dailyLimit": "Limite Diário",
+			"monthlyLimit": "Limite Mensal",
+			"limitPlaceholder": "0 = ilimitado",
 			"validation": {
 				"apiNameRequired": "Insira o nome da API",
 				"addresserRequired": "Selecione o remetente",
@@ -1597,6 +1602,27 @@
 			"updating": "Atualizando, aguarde...",
 			"deleting": "Excluindo, aguarde...",
 			"testing": "Testando, aguarde..."
+		},
+		"directSend": {
+			"collapseTitle": "Referência da API de Envio Direto",
+			"description": "Envie e-mails transacionais diretamente sem precisar de um template pré-configurado. Ideal para OTPs, redefinição de senha e confirmações de pedido.",
+			"exampleTitle": "Exemplo (curl)",
+			"fields": {
+				"endpoint": "Endpoint",
+				"auth": "Autenticação"
+			},
+			"table": {
+				"field": "Campo",
+				"required": "Obrigatório",
+				"description": "Descrição",
+				"rows": {
+					"to": "Endereço de e-mail do destinatário",
+					"subject": "Assunto do e-mail",
+					"html": "Corpo HTML completo",
+					"from": "Endereço do remetente (substitui o padrão da API)",
+					"from_name": "Nome do remetente (substitui o padrão da API)"
+				}
+			}
 		}
 	},
 	"sequences": {

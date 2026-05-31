@@ -27,6 +27,8 @@ type APIParams = {
 	unsubscribe: number
 	active: number
 	ip_whitelist: string[]
+	daily_limit: number
+	monthly_limit: number
 }
 
 export const createApi = (params: APIParams) => {

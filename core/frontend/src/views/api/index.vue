@@ -35,6 +35,7 @@
 			</div>
 		</n-card>
 		<api-overview ref="overviewRef" :time="tableParams.time_range"></api-overview>
+		<api-direct-docs class="mb-24px"></api-direct-docs>
 		<bt-table-layout>
 			<template #toolsLeft>
 				<n-button type="primary" @click="handleAdd">
@@ -69,6 +70,7 @@ import ApiOverview from './components/Overview.vue'
 import ApiKey from './components/ApiKey.vue'
 import ApiForm from './components/ApiForm.vue'
 import ApiTest from './components/ApiTest.vue'
+import ApiDirectDocs from './components/ApiDirectDocs.vue'
 
 const { t } = useI18n()
 
@@ -108,6 +110,17 @@ const columns = ref<DataTableColumns<Api>>([
 		title: t('api.columns.sendCount'),
 		width: '9%',
 		maxWidth: 100,
+	},
+	{
+		key: 'usage',
+		title: t('api.columns.usage'),
+		width: '12%',
+		maxWidth: 140,
+		render: row => {
+			const daily = row.daily_limit > 0 ? `${row.daily_sent}/${row.daily_limit}` : '∞'
+			const monthly = row.monthly_limit > 0 ? `${row.monthly_sent}/${row.monthly_limit}` : '∞'
+			return `${daily} · ${monthly}`
+		},
 	},
 	{
 		key: 'open_rate',

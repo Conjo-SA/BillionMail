@@ -19,18 +19,27 @@
 				</n-form-item>
 				<n-form-item :label="$t('market.task.edit.template')" path="template_id">
 					<div class="flex-1">
-						<template-select v-model:value="form.template_id" v-model:content="form.template_content">
+						<template-select v-model:value="form.template_id" v-model:content="form.template_content" clearable
+							:placeholder="$t('api.form.templateOptionalPlaceholder')">
 						</template-select>
 					</div>
-					<n-button text type="primary" class="ml-12px" @click="handleEditTemplate">
+					<n-button v-if="form.template_id" text type="primary" class="ml-12px" @click="handleEditTemplate">
 						{{ $t('common.actions.edit') }}
 					</n-button>
-					<n-button text type="primary" class="ml-12px" @click="handlePreviewTemplate(form.template_content)">
+					<n-button v-if="form.template_id" text type="primary" class="ml-12px" @click="handlePreviewTemplate(form.template_content)">
 						{{ $t('common.actions.preview') }}
 					</n-button>
 				</n-form-item>
 				<n-form-item :label="$t('api.form.status')">
 					<n-switch v-model:value="form.active" :checked-value="1" :unchecked-value="0"></n-switch>
+				</n-form-item>
+				<n-form-item :label="$t('api.form.dailyLimit')">
+					<n-input-number v-model:value="form.daily_limit" :min="0" :placeholder="$t('api.form.limitPlaceholder')" class="w-full">
+					</n-input-number>
+				</n-form-item>
+				<n-form-item :label="$t('api.form.monthlyLimit')">
+					<n-input-number v-model:value="form.monthly_limit" :min="0" :placeholder="$t('api.form.limitPlaceholder')" class="w-full">
+					</n-input-number>
 				</n-form-item>
 				<bt-more>
 					<template #title>
@@ -120,6 +129,8 @@ const form = reactive({
 	track_click: 1,
 	track_open: 1,
 	group_id: null as number | null,
+	daily_limit: 0,
+	monthly_limit: 0,
 })
 
 const rules: FormRules = {
@@ -134,14 +145,6 @@ const rules: FormRules = {
 	full_name: {
 		required: true,
 		message: t('market.task.edit.displayNamePlaceholder'),
-	},
-	subject: {
-		required: true,
-		message: t('market.task.edit.subjectPlaceholder'),
-	},
-	template_id: {
-		required: true,
-		message: t('api.form.validation.templateRequired'),
 	},
 }
 
@@ -196,6 +199,8 @@ const resetForm = () => {
 	form.track_click = 1
 	form.track_open = 1
 	form.group_id = null
+	form.daily_limit = 0
+	form.monthly_limit = 0
 }
 
 const getParams = () => {
@@ -211,6 +216,8 @@ const getParams = () => {
 		track_click: form.track_click,
 		track_open: form.track_open,
 		group_id: form.group_id || 0,
+		daily_limit: form.daily_limit,
+		monthly_limit: form.monthly_limit,
 	}
 }
 
@@ -234,6 +241,8 @@ const [Modal, modalApi] = useModal({
 				form.track_click = row.track_click
 				form.track_open = row.track_open
 				form.group_id = row.group_id || null
+				form.daily_limit = row.daily_limit || 0
+				form.monthly_limit = row.monthly_limit || 0
 			}
 		} else {
 			resetForm()

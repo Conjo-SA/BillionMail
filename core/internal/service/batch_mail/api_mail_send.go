@@ -30,12 +30,14 @@ const (
 )
 
 type ApiMailLog struct {
-	Id        int64
-	ApiId     int
-	Recipient string
-	Addresser string
-	MessageId string
-	Attribs   map[string]string `json:"attribs"`
+	Id            int64
+	ApiId         int
+	Recipient     string
+	Addresser     string
+	MessageId     string
+	Attribs       map[string]string `json:"attribs"`
+	CustomSubject string
+	CustomContent string
 }
 
 // Cache data structure
@@ -109,34 +111,41 @@ func (p *WorkerPool) processMail(ctx context.Context, log ApiMailLog) {
 		p.cache.ApiTemplates[log.ApiId] = apiTemplate
 	}
 
-	emailTemplate, ok := p.cache.EmailTemplates[apiTemplate.TemplateId]
-	if !ok {
-		err := g.DB().Model("email_templates").
-			Where("id", apiTemplate.TemplateId).
-			Ctx(ctx).
-			Scan(&emailTemplate)
-		if err != nil {
-			updateLogStatus(ctx, log.Id, StatusFailed, fmt.Sprintf("Failed to get email template: %v", err))
-			return
-		}
-		p.cache.EmailTemplates[apiTemplate.TemplateId] = emailTemplate
-	}
+	var content, subject string
 
-	contact, ok := p.cache.Contacts[log.Recipient]
-	if !ok {
-		err := g.DB().Model("bm_contacts").
-			Where("email", log.Recipient).
-			Ctx(ctx).
-			Scan(&contact)
-		if err != nil {
-			updateLogStatus(ctx, log.Id, StatusFailed, fmt.Sprintf("Failed to get contact info: %v", err))
-			return
+	// Direct send: custom content provided, no template needed
+	if log.CustomContent != "" {
+		content = log.CustomContent
+		subject = log.CustomSubject
+	} else {
+		emailTemplate, ok := p.cache.EmailTemplates[apiTemplate.TemplateId]
+		if !ok {
+			err := g.DB().Model("email_templates").
+				Where("id", apiTemplate.TemplateId).
+				Ctx(ctx).
+				Scan(&emailTemplate)
+			if err != nil {
+				updateLogStatus(ctx, log.Id, StatusFailed, fmt.Sprintf("Failed to get email template: %v", err))
+				return
+			}
+			p.cache.EmailTemplates[apiTemplate.TemplateId] = emailTemplate
 		}
-		p.cache.Contacts[log.Recipient] = contact
-	}
 
-	// Process email content and subject
-	content, subject := processMailContentAndSubject(ctx, emailTemplate.Content, apiTemplate.Subject, &apiTemplate, contact, log)
+		contact, ok := p.cache.Contacts[log.Recipient]
+		if !ok {
+			err := g.DB().Model("bm_contacts").
+				Where("email", log.Recipient).
+				Ctx(ctx).
+				Scan(&contact)
+			if err != nil {
+				updateLogStatus(ctx, log.Id, StatusFailed, fmt.Sprintf("Failed to get contact info: %v", err))
+				return
+			}
+			p.cache.Contacts[log.Recipient] = contact
+		}
+
+		content, subject = processMailContentAndSubject(ctx, emailTemplate.Content, apiTemplate.Subject, &apiTemplate, contact, log)
+	}
 
 	// Send email
 	err := sendApiMail(ctx, &apiTemplate, subject, content, log)

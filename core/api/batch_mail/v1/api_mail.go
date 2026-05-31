@@ -23,6 +23,8 @@ type ApiTemplates struct {
 	UpdateTime        int    `json:"update_time" dc:"update time"`
 	ExpireTime        int    `json:"expire_time" dc:"expire time"`
 	LastKeyUpdateTime int    `json:"last_key_update_time" dc:"last key update time"`
+	DailyLimit        int    `json:"daily_limit" dc:"daily send limit (0=unlimited)"`
+	MonthlyLimit      int    `json:"monthly_limit" dc:"monthly send limit (0=unlimited)"`
 }
 
 type ApiMailLogs struct {
@@ -55,9 +57,10 @@ type ApiTemplatesInfo struct {
 	ClickRate    float64 `json:"click_rate" dc:"click rate"`
 	DeliveryRate float64 `json:"delivery_rate" dc:"delivery rate"`
 	BounceRate   float64 `json:"bounce_rate" dc:"bounce rate"`
-	//UnsubscribeCount int      `json:"unsubscribe_count" dc:"unsubscribe count"`
 	IpWhitelist     []string `json:"ip_whitelist" dc:"IP whitelist"`
 	ServerAddresser string   `json:"server_addresser" dc:"server addresser"`
+	DailySent    int `json:"daily_sent" dc:"emails sent today"`
+	MonthlySent  int `json:"monthly_sent" dc:"emails sent this month"`
 }
 
 type ApiTemplatesListRes struct {
@@ -94,7 +97,7 @@ type ApiTemplatesCreateReq struct {
 	g.Meta        `path:"/batch_mail/api/create" method:"post" tags:"ApiMail" summary:"api create"`
 	Authorization string `json:"authorization" dc:"Authorization" in:"header"`
 	ApiName       string `json:"api_name" dc:"api name"`
-	TemplateId    int    `json:"template_id" dc:"template id"`
+	TemplateId    int    `json:"template_id" dc:"template id (0 = direct send mode)"`
 	GroupId       int    `json:"group_id" dc:"Associated group ID"`
 	Subject       string `json:"subject" dc:"subject"`
 	Addresser     string `json:"addresser" dc:"addresser"`
@@ -102,10 +105,11 @@ type ApiTemplatesCreateReq struct {
 	Unsubscribe   int    `json:"unsubscribe" dc:"unsubscribe"`
 	Active        int    `json:"active" dc:"active"`
 	ExpireTime    int    `json:"expire_time" dc:"expire time"` // 0 is a permanently valid unit of seconds
-	//IpWhitelistEnabled int      `json:"ip_whitelist_enabled" dc:"ip whitelist enabled"`
 	IpWhitelist []string `json:"ip_whitelist" dc:"ip whitelist"`
 	TrackOpen   int      `json:"track_open" v:"in:0,1" dc:"track open" default:"1"`
 	TrackClick  int      `json:"track_click" v:"in:0,1" dc:"track click" default:"1"`
+	DailyLimit   int      `json:"daily_limit" dc:"daily send limit (0=unlimited)"`
+	MonthlyLimit int      `json:"monthly_limit" dc:"monthly send limit (0=unlimited)"`
 }
 
 type ApiTemplatesCreateRes struct {
@@ -117,7 +121,7 @@ type ApiTemplatesUpdateReq struct {
 	Authorization string `json:"authorization" dc:"Authorization" in:"header"`
 	ID            int    `json:"id" dc:"id"`
 	ApiName       string `json:"api_name" dc:"api name"`
-	TemplateId    int    `json:"template_id" dc:"template id"`
+	TemplateId    int    `json:"template_id" dc:"template id (0 = direct send mode)"`
 	GroupId       int    `json:"group_id" dc:"Associated group ID"`
 	Subject       string `json:"subject" dc:"subject"`
 	Addresser     string `json:"addresser" dc:"addresser"`
@@ -128,8 +132,9 @@ type ApiTemplatesUpdateReq struct {
 	Active        int    `json:"active" dc:"active"`
 	ExpireTime    int    `json:"expire_time" dc:"Key expiration time (0 is permanent)"`
 	ResetKey      bool   `json:"reset_key" dc:"reset key"`
-	//IpWhitelistEnabled int      `json:"ip_whitelist_enabled" dc:"ip whitelist enabled"`
-	IpWhitelist []string `json:"ip_whitelist" dc:"ip whitelist"`
+	IpWhitelist  []string `json:"ip_whitelist" dc:"ip whitelist"`
+	DailyLimit   int      `json:"daily_limit" dc:"daily send limit (0=unlimited)"`
+	MonthlyLimit int      `json:"monthly_limit" dc:"monthly send limit (0=unlimited)"`
 }
 
 type ApiTemplatesUpdateRes struct {
@@ -169,5 +174,21 @@ type ApiMailBatchSendReq struct {
 }
 
 type ApiMailBatchSendRes struct {
+	api_v1.StandardRes
+}
+
+// ApiMailSendDirectReq sends an email directly without requiring a pre-configured template.
+// Rate limits (daily/monthly) configured on the API key are enforced.
+type ApiMailSendDirectReq struct {
+	g.Meta   `path:"/batch_mail/api/send_direct" method:"post" tags:"ApiMail" summary:"send email directly without template"`
+	ApiKey   string `json:"x-api-key" dc:"API Key" in:"header"`
+	To       string `json:"to" dc:"recipient email address" v:"required"`
+	Subject  string `json:"subject" dc:"email subject" v:"required"`
+	Html     string `json:"html" dc:"HTML body" v:"required"`
+	From     string `json:"from" dc:"sender address (optional, overrides API default)"`
+	FromName string `json:"from_name" dc:"sender display name (optional, overrides API default)"`
+}
+
+type ApiMailSendDirectRes struct {
 	api_v1.StandardRes
 }

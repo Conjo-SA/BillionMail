@@ -26,13 +26,15 @@ func generateApiKey() (string, error) {
 func (c *ControllerV1) ApiTemplatesCreate(ctx context.Context, req *v1.ApiTemplatesCreateReq) (res *v1.ApiTemplatesCreateRes, err error) {
 	res = &v1.ApiTemplatesCreateRes{}
 
-	// check if template exists
-	count, err := g.DB().Model("email_templates").Where("id", req.TemplateId).Count()
-	if err != nil {
-		return nil, err
-	}
-	if count == 0 {
-		return nil, gerror.New(public.LangCtx(ctx, "Email template does not exist"))
+	// check if template exists (only required when template_id > 0)
+	if req.TemplateId > 0 {
+		count, err := g.DB().Model("email_templates").Where("id", req.TemplateId).Count()
+		if err != nil {
+			return nil, err
+		}
+		if count == 0 {
+			return nil, gerror.New(public.LangCtx(ctx, "Email template does not exist"))
+		}
 	}
 
 	// generate API key
@@ -66,6 +68,8 @@ func (c *ControllerV1) ApiTemplatesCreate(ctx context.Context, req *v1.ApiTempla
 		"active":               req.Active,
 		"expire_time":          0,
 		"last_key_update_time": time.Now().Unix(),
+		"daily_limit":          req.DailyLimit,
+		"monthly_limit":        req.MonthlyLimit,
 	})
 
 	if err != nil {

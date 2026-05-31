@@ -23,6 +23,10 @@ export interface Api {
 	bounce_rate: number
 	group_id: number
 	ip_whitelist: string[]
+	daily_limit: number
+	monthly_limit: number
+	daily_sent: number
+	monthly_sent: number
 }
 
 export interface ApiParams {

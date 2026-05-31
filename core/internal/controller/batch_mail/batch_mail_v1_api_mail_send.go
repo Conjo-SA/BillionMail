@@ -102,8 +102,11 @@ func (c *ControllerV1) ApiMailSend(ctx context.Context, req *v1.ApiMailSendReq) 
 
 // 记录到日志表，状态为待发送
 func recordApiMailLog(ctx context.Context, apiTemplate *entity.ApiTemplates, recipient, addresser string, attribs map[string]string) error {
-	// 生成消息ID
+	return recordApiMailLogFull(ctx, apiTemplate, recipient, addresser, attribs, "", "")
+}
 
+// recordApiMailLogFull records a mail log entry; customSubject/customContent are set for direct (templateless) sends.
+func recordApiMailLogFull(ctx context.Context, apiTemplate *entity.ApiTemplates, recipient, addresser string, attribs map[string]string, customSubject, customContent string) error {
 	sender, err := mail_service.NewEmailSenderWithLocal(addresser)
 	if err != nil {
 		return gerror.New(public.LangCtx(ctx, "Failed to create email sender: {}", err))
@@ -113,22 +116,22 @@ func recordApiMailLog(ctx context.Context, apiTemplate *entity.ApiTemplates, rec
 	messageId := sender.GenerateMessageID()
 	messageId = strings.Trim(messageId, "<>")
 
-	// 直接记录到日志表，状态为待发送
 	now := int(time.Now().Unix())
 	_, err = g.DB().Model("api_mail_logs").Insert(g.Map{
-		"api_id":        apiTemplate.Id,
-		"recipient":     recipient,
-		"message_id":    messageId, // 发送时需要加<>
-		"addresser":     addresser,
-		"status":        0, // 待发送
-		"error_message": "",
-		"send_time":     0,
-		"create_time":   now,
-		"attribs":       attribs,
+		"api_id":         apiTemplate.Id,
+		"recipient":      recipient,
+		"message_id":     messageId,
+		"addresser":      addresser,
+		"status":         0,
+		"error_message":  "",
+		"send_time":      0,
+		"create_time":    now,
+		"attribs":        attribs,
+		"custom_subject": customSubject,
+		"custom_content": customContent,
 	})
 
 	return err
-
 }
 
 // get API template

@@ -168,15 +168,19 @@ type ApiTemplates struct {
 	UpdateTime        int    `json:"update_time" dc:"update time"`
 	ExpireTime        int    `json:"expire_time" dc:"expire time"`
 	LastKeyUpdateTime int    `json:"last_key_update_time" dc:"last key update time"`
+	DailyLimit        int    `json:"daily_limit" dc:"daily send limit (0=unlimited)"`
+	MonthlyLimit      int    `json:"monthly_limit" dc:"monthly send limit (0=unlimited)"`
 }
 
 type ApiMailLogs struct {
-	Id        int    `json:"id" dc:"id"`
-	ApiId     int    `json:"api_id" dc:"api id"`
-	Recipient string `json:"recipient" dc:"recipient"`
-	MessageId string `json:"message_id" dc:"message id"`
-	Addresser string `json:"addresser" dc:"addresser"`
-	SendTime  int    `json:"send_time" dc:"send time"`
+	Id            int    `json:"id" dc:"id"`
+	ApiId         int    `json:"api_id" dc:"api id"`
+	Recipient     string `json:"recipient" dc:"recipient"`
+	MessageId     string `json:"message_id" dc:"message id"`
+	Addresser     string `json:"addresser" dc:"addresser"`
+	SendTime      int    `json:"send_time" dc:"send time"`
+	CustomSubject string `json:"custom_subject" dc:"custom subject for direct send"`
+	CustomContent string `json:"custom_content" dc:"custom HTML content for direct send"`
 }
 
 type Tag struct {

@@ -1,0 +1,16 @@
+
+	<div class="menu menu_bottom">
+		<roundcube:button type="link" command="settings" label="settings" innerClass="inner" class="settings" classSel="settings selected" />
+		
+		<roundcube:button type="link" command="logout" label="logout" innerClass="inner" class="logout" classSel="logout selected" />
+
+		<roundcube:container name="taskbar" id="taskmenu" />
+
+		<roundcube:if condition="env:quota" />
+			<div id="quotadisplay" class="quota-widget"><span class="voice"><roundcube:label name="quota"></span>
+			<roundcube:object name="quotaDisplay" class="count" display="text" /></div>
+		<roundcube:endif />
+	</div>
+
+
+

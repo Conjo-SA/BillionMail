@@ -137,6 +137,9 @@ func (c *ControllerV1) ApiTemplatesList(ctx context.Context, req *v1.ApiTemplate
 		}
 		item.IpWhitelist = ips
 		item.ServerAddresser = domains.GetBaseURL() + "/api/batch_mail/api/send"
+
+		// rate limit usage from Redis
+		item.DailySent, item.MonthlySent = getApiRateCounts(ctx, item.Id)
 	}
 
 	res.Data.Total = total
